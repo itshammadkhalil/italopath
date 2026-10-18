@@ -1,0 +1,265 @@
+"use client";
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { 
+  ChevronDown, 
+  ChevronRight, 
+  Search, 
+  FileCheck, 
+  ShieldAlert, 
+  CheckCircle2, 
+  XCircle,
+  Building2,
+  GraduationCap
+} from 'lucide-react';
+
+const faqs = [
+  {
+    q: "Can any consultancy guarantee a visa?",
+    a: "No. Absolutely not. Visa decisions are made exclusively by Italian embassies and consulates. Any consultancy claiming to guarantee visa approval is misleading you. What we can do is ensure your documentation is strictly compliant with embassy requirements to maximize your chances."
+  },
+  {
+    q: "What if my VFS appointment gets delayed?",
+    a: "VFS appointment availability depends heavily on seasonal demand and embassy backlogs. During peak season (June–August), slots fill instantly. We help you monitor slot availability and guide you on optimal booking strategies, but we cannot bypass or control VFS scheduling."
+  },
+  {
+    q: "Are university entry requirements really that simple?",
+    a: "Italian public universities generally have transparent barriers to entry compared to the UK or US — but they're not zero. You still need a valid secondary/university qualification, language proficiency (IELTS/PTE), and in some cases, must pass an entrance exam (TOLC). We evaluate your eligibility honestly."
+  },
+  {
+    q: "What if I don't get the DSU scholarship?",
+    a: "DSU regional scholarships are competitive and strictly based on your family's financial situation (ISEE score) and academic merit. If your ISEE Parificato is above the regional threshold, you will not qualify for the maximum benefits. We assess your financial documents before you commit to applying."
+  },
+  {
+    q: "How much does studying in Italy actually cost?",
+    a: "With a scholarship: potentially €0 for tuition + free accommodation + cash grants. Without: tuition at public universities ranges from €200–€4,000/year depending on your ISEE, plus €400–€700/month in living costs depending on the city. We give you a realistic budget breakdown upfront."
+  }
+];
+
+export default function AboutPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <main className="min-h-screen bg-slate-50/50 pb-24">
+      
+      {/* ════════════════════════════════════════════
+          1. UNIFIED PREMIUM HERO
+      ════════════════════════════════════════════ */}
+      <section className="bg-slate-950 text-white py-20 lg:py-24 px-6 border-b border-slate-800 relative overflow-hidden">
+        {/* Subtle mesh background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[10%] w-[40%] h-[60%] rounded-full bg-emerald-500/[0.04] blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] right-[10%] w-[30%] h-[50%] rounded-full bg-blue-500/[0.03] blur-[100px]"></div>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-2 text-sm font-medium text-slate-400 mb-8 animate-fade-in-up">
+            <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-white">About Us</span>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold tracking-wide mb-6 animate-fade-in-up">
+            🇮🇹 The Anti-Consultancy Philosophy
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight animate-fade-in-up delay-100">
+            About ItaloPath
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            Built out of frustration with misleading agents, hidden charges, and fake visa guarantees. We provide strictly legal, transparent pathways to Italian public universities.
+          </p>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+          2. BUILT ON TRANSPARENCY
+      ════════════════════════════════════════════ */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Built on Absolute Transparency</h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">We don't sell dreams; we execute legal pathways. Our process is rooted in honesty and compliance with Italian law.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Pillar 1 */}
+          <div className="bg-white border border-slate-200/80 p-8 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300 group">
+            <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Search className="w-6 h-6 text-emerald-600" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">100% Document Transparency</h3>
+            <p className="text-slate-600 leading-relaxed text-sm">
+              Every document we submit on your behalf—to CIMEA, Universitaly, or the Embassy—is shared with you. You own your application.
+            </p>
+          </div>
+
+          {/* Pillar 2 */}
+          <div className="bg-white border border-slate-200/80 p-8 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300 group">
+            <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FileCheck className="w-6 h-6 text-emerald-600" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Honest Assessment</h3>
+            <p className="text-slate-600 leading-relaxed text-sm">
+              We rigorously evaluate your academic and financial profile. If you don't qualify for a university or scholarship, we will tell you upfront before taking your money.
+            </p>
+          </div>
+
+          {/* Pillar 3 */}
+          <div className="bg-white border border-slate-200/80 p-8 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300 group">
+            <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <ShieldAlert className="w-6 h-6 text-emerald-600" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">No Visa Guarantees</h3>
+            <p className="text-slate-600 leading-relaxed text-sm">
+              Visas are granted exclusively by the Italian Diplomatic Missions. We guarantee a flawless file, but we never guarantee a visa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+          3. HOW WE'RE DIFFERENT (Comparison)
+      ════════════════════════════════════════════ */}
+      <section className="py-12 px-6">
+        <div className="max-w-4xl mx-auto bg-slate-900 border border-slate-800 text-white rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-800 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4 border border-slate-700">
+              Head-to-Head Comparison
+            </span>
+            <h2 className="text-3xl font-bold">How We're Different</h2>
+          </div>
+
+          <div className="grid grid-cols-[1fr_1fr] md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 pb-4 border-b border-slate-800 text-sm font-bold text-slate-400 uppercase tracking-wider">
+            <div className="hidden md:block">Criteria</div>
+            <div className="text-center text-slate-500">Traditional Agents</div>
+            <div className="text-center text-emerald-400">ItaloPath</div>
+          </div>
+
+          <div className="space-y-0">
+            {[
+              { label: "Visa Outcome", bad: "Fake 100% Guarantees", good: "Honest File Prep Only" },
+              { label: "University Selection", bad: "Partner Unis Only (Commission based)", good: "Top Public Universities (Merit based)" },
+              { label: "Pricing Structure", bad: "Hidden Fees & Cuts", good: "Flat Transparent Fee" },
+              { label: "Account Control", bad: "Agents keep your passwords", good: "You own your portals" },
+              { label: "Scholarship Support", bad: "Ignored or charged extra", good: "Core DSU processing included" },
+            ].map((row, idx) => (
+              <div key={idx} className="grid grid-cols-[1fr_1fr] md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 py-5 border-b border-slate-800/60 hover:bg-white/[0.02] transition-colors items-center">
+                <div className="hidden md:block font-medium text-slate-200">{row.label}</div>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-center text-sm text-slate-400">
+                  <XCircle className="w-4 h-4 text-red-500/80 shrink-0" />
+                  <span>{row.bad}</span>
+                </div>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-center text-sm font-semibold text-white bg-emerald-500/10 py-2 px-3 rounded-lg border border-emerald-500/20">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>{row.good}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+          4. FOUNDER / OPERATIONAL ETHICS
+      ════════════════════════════════════════════ */}
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Founder Card */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-10 -mt-10 z-0"></div>
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-8">
+                <Building2 className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight">Our Operational Standard</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-slate-700 font-medium leading-relaxed">Direct Italian Academic Experience</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-slate-700 font-medium leading-relaxed">No Middlemen or Sub-agents</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-slate-700 font-medium leading-relaxed">Ground-Level Universitaly Guidance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right: Manifesto */}
+          <div className="lg:pl-8">
+            <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">Our Manifesto</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">Why Italy?</h3>
+            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+              <p>
+                Because higher education should be accessible based on your intellect and hard work, not the size of your bank balance.
+              </p>
+              <p>
+                Italy’s DSU scholarship framework is one of the most generous in the world, yet thousands of students miss out due to bureaucratic errors, missed deadlines, or poor guidance from uneducated agents.
+              </p>
+              <div className="pl-6 border-l-4 border-emerald-500 pt-1 pb-1">
+                <p className="font-semibold text-slate-800">
+                  "We handle your applications with the exact same precision and urgency we would use for our own."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+          5. REALITY CHECK FAQ
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-slate-100/50 border-t border-slate-200">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">The Reality Check FAQ</h2>
+            <p className="text-lg text-slate-500">We prefer brutal honesty over comfortable lies.</p>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:border-slate-300 transition-colors"
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="flex w-full items-center justify-between p-6 text-left focus:outline-none transition-colors hover:bg-slate-50/50 group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-base font-bold text-slate-900 pr-8">{faq.q}</span>
+                    <ChevronDown 
+                      className={`h-5 w-5 flex-shrink-0 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-emerald-600' : 'group-hover:text-slate-600'}`}
+                    />
+                  </button>
+                  <div 
+                    className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 mt-2 text-sm">
+                        {faq.a}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
