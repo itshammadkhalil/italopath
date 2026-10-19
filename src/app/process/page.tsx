@@ -8,7 +8,6 @@ import {
   Globe,
   FileText,
   Plane,
-  ChevronRight,
   ArrowRight,
   CheckCircle2,
   Package,
@@ -187,71 +186,98 @@ export default function ProcessPage() {
       {/* ════════════════════════════════════════════
           HERO HEADER
       ════════════════════════════════════════════ */}
-      <section className="bg-[#090D16] relative overflow-hidden">
+      <section className="bg-slate-950 border-b border-slate-800 relative overflow-hidden py-10 lg:py-12">
         {/* Subtle mesh background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-[-20%] right-[-5%] w-[40%] h-[60%] rounded-full bg-[#10A985]/[0.05] blur-[120px]"></div>
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] right-[-5%] w-[40%] h-[60%] rounded-full bg-emerald-500/[0.05] blur-[120px]"></div>
           <div className="absolute bottom-[-30%] left-[-10%] w-[35%] h-[50%] rounded-full bg-blue-500/[0.03] blur-[100px]"></div>
         </div>
-        <div className="absolute inset-0 z-[1] opacity-[0.02]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.5\'/%3E%3C/svg%3E")' }}></div>
 
-        {/* Bottom fade transition to slate-50/50 */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-slate-50/50 z-10"></div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 pb-32">
-          <div className="flex items-center space-x-2 text-sm font-medium text-slate-400 mb-8 animate-fade-in-up">
-            <Link
-              href="/"
-              className="hover:text-[#10A985] transition-colors"
-            >
-              Home
-            </Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Roadmap Dashboard</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column (6 cols) */}
+          <div className="lg:col-span-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400 mb-4">
+              🧭 End-to-End Operational Flow
+            </span>
+            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              The Italian Visa &amp; Admission Roadmap
+            </h1>
+            <p className="text-sm lg:text-base text-slate-300 max-w-lg mt-3 leading-relaxed">
+              A transparent 5-phase breakdown designed to eliminate embassy delays, secure DSU regional funding, and streamline your Universitaly application.
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                5 Clear Milestones
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                No Embassy Guesswork
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Strict Deadline Tracking
+              </span>
+            </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight animate-fade-in-up delay-100">
-            Your Executive Roadmap to Italy
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-14 animate-fade-in-up delay-200">
-            A precise, phase-by-phase interactive dashboard detailing every step from your initial profile evaluation to landing in Italy.
-          </p>
+          {/* Right Column (6 cols) - Interactive Mini-Stepper Card */}
+          <div className="lg:col-span-6">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-md text-white">
+              <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-slate-800">
+                <span className="text-sm font-bold text-white tracking-wide">Milestone Overview</span>
+                <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  100% Transparent
+                </span>
+              </div>
 
-          {/* ── Top Roadmap Progress Bar (Sleek Glassmorphism) ── */}
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 backdrop-blur-xl shadow-2xl animate-fade-in-up delay-300">
-            <div className="flex items-center justify-between relative">
-              {/* Background connector line */}
-              <div className="absolute top-[22px] left-8 right-8 h-px bg-slate-800 hidden md:block"></div>
-
-              {phases.map((phase, idx) => {
-                const isActive = activePhase === phase.num;
-                return (
-                  <button
-                    key={phase.num}
-                    onClick={() => setActivePhase(phase.num)}
-                    className="relative flex flex-col items-center gap-3 z-10 group flex-1"
-                  >
-                    {/* Node */}
-                    <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+              <div className="space-y-1.5">
+                {[
+                  { num: '01', title: 'Discovery & Shortlisting', time: '2–4 wks' },
+                  { num: '02', title: 'Offers & Document Legalisation', time: '4–8 wks' },
+                  { num: '03', title: 'Universitaly Portal Filing', time: '2–3 wks' },
+                  { num: '04', title: 'Scholarships & Embassy Dossier', time: '3–6 wks' },
+                  { num: '05', title: 'Visa Decision & Departure', time: '4–6 wks' },
+                ].map((step) => {
+                  const isActive = activePhase === step.num;
+                  return (
+                    <button
+                      key={step.num}
+                      type="button"
+                      onClick={() => setActivePhase(step.num)}
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left text-xs transition-all duration-200 ${
                         isActive
-                          ? 'bg-[#10A985] text-white shadow-[0_0_20px_rgba(16,169,133,0.3)] ring-4 ring-slate-900 scale-110'
-                          : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white ring-4 ring-slate-900'
+                          ? 'bg-slate-800 border border-emerald-500/40 text-white'
+                          : 'hover:bg-slate-800/60 text-slate-400 hover:text-slate-200 border border-transparent'
                       }`}
                     >
-                      {phase.num}
-                    </div>
-                    {/* Label */}
-                    <div
-                      className={`text-xs font-semibold tracking-wide uppercase transition-colors duration-300 hidden sm:block ${
-                        isActive ? 'text-white' : 'text-slate-500 group-hover:text-slate-300'
-                      }`}
-                    >
-                      {phase.shortLabel}
-                    </div>
-                  </button>
-                );
-              })}
+                      <div className="flex items-center gap-2.5">
+                        <span
+                          className={`w-5 h-5 rounded-md flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                            isActive
+                              ? 'bg-emerald-500 text-slate-950 font-black'
+                              : 'bg-slate-800 text-slate-400'
+                          }`}
+                        >
+                          {step.num}
+                        </span>
+                        <span className={`font-medium ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                          {step.title}
+                        </span>
+                      </div>
+                      <span className="text-[10px] text-slate-500 font-medium shrink-0 ml-2">
+                        {step.time}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <p className="text-[11px] text-slate-500 text-center mt-3 pt-2.5 border-t border-slate-800/80">
+                Scroll down for actionable phase checklists ↓
+              </p>
             </div>
           </div>
         </div>
@@ -260,7 +286,7 @@ export default function ProcessPage() {
       {/* ════════════════════════════════════════════
           PREMIUM CARD ARCHITECTURE (Interactive)
       ════════════════════════════════════════════ */}
-      <section className="py-12 -mt-16 relative z-20">
+      <section className="pt-10 pb-16 relative z-20">
         <div className="max-w-5xl mx-auto px-6">
           <div className="space-y-6">
             {phases.map((phase) => {
