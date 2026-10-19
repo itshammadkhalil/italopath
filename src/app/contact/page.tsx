@@ -103,8 +103,8 @@ export default function ContactPage() {
       {/* ════════════════════════════════════════════
           2. FORM & SIDEBAR GRID
       ════════════════════════════════════════════ */}
-      <section className="py-12 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <section className="py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto px-6">
           
           {/* LEFT: Assessment Form (8 Columns) */}
           <div className="lg:col-span-8">
@@ -308,7 +308,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT: Contact Sidebar (4 Columns) */}
-          <div className="lg:col-span-4 sticky top-24 space-y-5">
+          <div className="lg:col-span-4 space-y-6">
             
             {/* Card 1: Direct Contact */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 sm:p-6">
