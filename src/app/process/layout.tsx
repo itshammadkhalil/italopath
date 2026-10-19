@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Process & Timeline',
+  title: 'Step-by-Step Italy Student Visa Process Roadmap',
   description:
-    'Step-by-step timeline for Italian university admission — from application to arrival. Covers Universitaly, visa processing, and pre-departure preparation.',
+    'Phase-by-phase timeline: Admissions, document legalisation, Universitaly pre-enrolment, DSU scholarship applications, and VFS visa filing — fully explained.',
 };
 
 export default function ProcessLayout({

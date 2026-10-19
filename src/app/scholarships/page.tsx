@@ -17,9 +17,10 @@ import {
   FileCheck
 } from 'lucide-react';
 
-export const metadata: Metadata = { 
-  title: 'DSU Scholarships Guide | ItaloPath', 
-  description: 'The complete guide to Italian regional scholarships (DSU). Learn about ISEE Parificato, zero tuition, free accommodation, and living stipends for international students.' 
+export const metadata: Metadata = {
+  title: 'Complete DSU Italian Regional Scholarships Guide',
+  description:
+    'How to qualify for full tuition waivers, free hostel, and up to €8,500 living stipends. ISEE-Parificato calculation and document requirements explained for Pakistani students.',
 };
 
 export default function ScholarshipsPage() {

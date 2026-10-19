@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms and conditions governing ItaloPath's consultancy services for Italian university admissions, documentation guidance, and visa file preparation.",
+  robots: { index: false, follow: true },
 };
 
 export default function TermsOfServicePage() {

@@ -16,9 +16,10 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
-export const metadata: Metadata = { 
-  title: 'Our Services & Pricing | ItaloPath', 
-  description: 'Comprehensive Italy study visa and university admission packages. Structured pricing, zero hidden fees, and zero success commissions.' 
+export const metadata: Metadata = {
+  title: 'Italian University Admissions & Visa Services',
+  description:
+    'End-to-end assistance: University shortlisting, MOFA attestation, CIMEA evaluation, Universitaly filings, and embassy interview coaching. Transparent pricing, zero hidden fees.',
 };
 
 export default function ServicesPage() {

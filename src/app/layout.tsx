@@ -15,22 +15,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://italopath.com'),
   title: {
-    default: "ItaloPath — Your Gateway to Italian Higher Education",
+    default: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
     template: "%s | ItaloPath",
   },
   description:
-    "Specialized boutique consultancy for Italy study visas, Universitaly processing, DSU/ER.GO/LazioDisco scholarships, and university admissions. Transparent, honest, results-driven.",
+    "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
   keywords: [
-    "Italy study visa",
-    "Universitaly",
-    "DSU scholarship",
-    "ER.GO scholarship",
-    "LazioDisco",
-    "Italian university admission",
-    "study in Italy",
+    "Italy study visa Pakistan",
+    "DSU scholarship Italy",
+    "Universitaly pre enrolment",
+    "CIMEA statement of comparability",
+    "free education in Italy",
+    "Italian student visa requirements",
+    "study in Italy without IELTS",
     "ISEE Parificato",
+    "Italian university admission",
+    "ER.GO scholarship",
   ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_PK',
+    siteName: 'ItaloPath',
+    title: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
+    description:
+      "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
+    description:
+      "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

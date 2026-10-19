@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How ItaloPath collects, uses, stores, and protects your personal data during the Italian university admission and visa application process.",
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPolicyPage() {

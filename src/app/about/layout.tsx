@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About ItaloPath | The Anti-Consultancy Philosophy',
-  description: 'Built out of frustration with misleading agents and hidden charges. We provide strictly legal, transparent pathways to Italian universities.',
+  title: 'About Us | The Transparent Italy Education Consultancy',
+  description:
+    'Zero fake visa guarantees, 100% document transparency, and direct guidance for admissions to public universities in Italy. Built out of frustration with misleading agents and hidden charges.',
 };
 
 export default function AboutLayout({

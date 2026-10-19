@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Refund Policy",
   description:
     "ItaloPath's refund policy for consultancy, admission, documentation, and visa preparation services. Clear terms on what is and isn't refundable.",
+  robots: { index: false, follow: true },
 };
 
 export default function RefundPolicyPage() {

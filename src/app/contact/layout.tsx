@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Eligibility Evaluation",
+  title: 'Free Italy Study Visa Profile Assessment',
   description:
-    "Submit your academic profile for a free assessment. Our Italy education specialists will evaluate your eligibility for Italian universities and DSU scholarships within 24–48 hours.",
+    'Submit your academic profile for a free eligibility check on admission criteria and DSU scholarship eligibility. Pakistan-based Italy education specialists respond within 24–48 hours.',
 };
 
 export default function ContactLayout({
