@@ -7,11 +7,9 @@ import {
   Globe, 
   Banknote, 
   Shield,
-  ChevronRight,
   CheckCircle2,
   ArrowRight,
   MessageCircle,
-  Zap,
   Check,
   ShieldCheck
 } from 'lucide-react';
@@ -101,44 +99,105 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-slate-50 pb-24">
       {/* ════════════════════════════════════════════
-          1. SLEEK HEADER
+          1. COMPACT EXECUTIVE HEADER
       ════════════════════════════════════════════ */}
-      <section className="bg-slate-950 text-white pt-32 pb-20 px-6 border-b border-slate-800 relative overflow-hidden">
-        {/* Subtle mesh background */}
+      <section className="bg-slate-950 text-white py-14 lg:py-16 px-6 border-b border-slate-800 relative overflow-hidden">
+        {/* Subtle ambient glow */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] right-[10%] w-[40%] h-[60%] rounded-full bg-emerald-500/[0.04] blur-[100px]"></div>
+          <div className="absolute top-[-20%] right-[5%] w-[35%] h-[70%] rounded-full bg-emerald-500/[0.04] blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <div className="flex items-center justify-center text-sm font-medium text-slate-400 mb-8 space-x-2 animate-fade-in-up">
-            <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Services</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-7xl mx-auto px-6 relative z-10">
+
+          {/* ── Left: 7 columns ── */}
+          <div className="lg:col-span-7">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/70 border border-slate-700/60 text-slate-300 text-xs font-semibold tracking-wide mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+              🇮🇹 Specialized Advisory
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3">
+              Structured Higher Education<br className="hidden lg:block" /> Pathways to Italy
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-sm lg:text-base text-slate-300 max-w-xl mt-3 leading-relaxed">
+              End-to-end operational assistance covering public university admissions, CIMEA credential validation, Universitaly filings, and DSU scholarship files.
+            </p>
+
+            {/* Trust markers */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-5 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Zero Hidden Commissions
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Official Portal Verification
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Full File Transparency
+              </span>
+            </div>
           </div>
-          
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-300 text-sm font-semibold tracking-wide mb-6 animate-fade-in-up">
-            <Zap className="w-4 h-4 text-emerald-400" />
-            Specialized Italian Visa Advisory
+
+          {/* ── Right: 5 columns — Advisory Scope card ── */}
+          <div className="lg:col-span-5">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 backdrop-blur-md text-white shadow-xl">
+              {/* Card header */}
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-sm font-bold text-white tracking-wide">Advisory Scope</span>
+                <span className="relative flex h-2 w-2 ml-1">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+              </div>
+
+              {/* Bullet items */}
+              <ul className="space-y-3.5 mb-6">
+                {[
+                  "Pre-Assessment & CGPA Matching (Free)",
+                  "Document Attestations & Certified Translation Setup",
+                  "Regional Scholarship & Visa Dossier Assembly",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-300 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Footer CTA */}
+              <div className="border-t border-slate-800 pt-4 flex items-center justify-between">
+                <span className="text-xs text-slate-500">Need a quick evaluation?</span>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  Check Eligibility
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight animate-fade-in-up delay-100 max-w-4xl mx-auto">
-            Comprehensive Services for Italian Higher Education
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            From university admissions and Universitaly filings to DSU scholarships and visa file preparation — structured for maximum approval rates.
-          </p>
+
         </div>
       </section>
 
       {/* ════════════════════════════════════════════
           2. CORE SERVICE CARDS (3x2 Grid)
       ════════════════════════════════════════════ */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+      <section className="pt-12 pb-6 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">The Core Expertise</h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">Our proven methodology broken down into actionable phases.</p>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
