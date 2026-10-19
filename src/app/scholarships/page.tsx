@@ -119,8 +119,8 @@ export default function ScholarshipsPage() {
       ════════════════════════════════════════════ */}
       <section className="pt-12 pb-16 max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 tracking-tight">Comprehensive Benefits Breakdown</h2>
-          <p className="text-base text-slate-500 max-w-2xl mx-auto">
+          <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">Comprehensive Benefits Breakdown</h2>
+          <p className="text-slate-600 text-sm leading-relaxed max-w-2xl mx-auto">
             A DSU scholarship offers full-spectrum support, completely removing the financial barriers to living and studying in Italy.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 mt-4">
               <Banknote className="w-6 h-6 text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Direct Cash Grant</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">Direct Cash Grant</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
               Deposited directly into your Italian bank account to cover living expenses, books, and transport.
             </p>
@@ -144,7 +144,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 mt-4">
               <Home className="w-6 h-6 text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Free Accommodation</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">Free Accommodation</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
               A guaranteed spot in university residence halls or a housing stipend if spots are unavailable.
             </p>
@@ -156,7 +156,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 mt-4">
               <GraduationCap className="w-6 h-6 text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Tuition Waiver</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">Tuition Waiver</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
               Complete exemption from university tuition fees. You only pay a minor regional tax (approx. €156/yr).
             </p>
@@ -168,7 +168,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 mt-4">
               <UtensilsCrossed className="w-6 h-6 text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Free Canteen Meals</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">Free Canteen Meals</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
               Full access to university canteens offering 2 free, high-quality Italian meals per day.
             </p>
@@ -193,9 +193,9 @@ export default function ScholarshipsPage() {
             
             {/* Left: Required Financial Documents (3 Cards) */}
             <div className="lg:col-span-7">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Required Financial Documents</h2>
-              <p className="text-slate-600 mb-10 leading-relaxed">
-                To calculate your ISEE score, you must provide officially translated and attested (MOFA) documents proving your family's financial status.
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-4">Required Financial Documents</h2>
+              <p className="text-slate-600 text-sm leading-relaxed mb-8">
+                To calculate your ISEE score, you must provide officially translated and attested (MOFA) documents proving your family&apos;s financial status.
               </p>
 
               <div className="space-y-6">
@@ -205,7 +205,7 @@ export default function ScholarshipsPage() {
                     <Users className="w-6 h-6 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3">Family & Identity</h3>
+                    <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-3">Family & Identity</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> Family Registration Certificate (FRC)</li>
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> NADRA Family Tree (if applicable)</li>
@@ -220,7 +220,7 @@ export default function ScholarshipsPage() {
                     <Briefcase className="w-6 h-6 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3">Income Proof (Parents/Guardian)</h3>
+                    <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-3">Income Proof (Parents/Guardian)</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> Salary Slips (last 3-6 months)</li>
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> Bank Statements (last 6 months)</li>
@@ -235,7 +235,7 @@ export default function ScholarshipsPage() {
                     <Building2 className="w-6 h-6 text-slate-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3">Wealth & Property</h3>
+                    <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-3">Wealth & Property</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> FBR Wealth Statement / Asset Declaration</li>
                       <li className="flex items-start gap-2 text-sm text-slate-600"><CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" /> Property/Land Ownership Valuation</li>
@@ -254,7 +254,7 @@ export default function ScholarshipsPage() {
                   Official CAF Processing
                 </div>
                 
-                <h2 className="text-2xl font-bold text-white mb-6">ISEE Parificato Explained</h2>
+                <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight mb-6">ISEE Parificato Explained</h2>
                 
                 <div className="space-y-6 mb-8">
                   <div>
@@ -289,7 +289,7 @@ export default function ScholarshipsPage() {
           5. DISQUALIFICATION & SOLUTIONS
       ════════════════════════════════════════════ */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Protecting Your Scholarship</h2>
+        <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-10 text-center">Protecting Your Scholarship</h2>
         
         <div className="grid md:grid-cols-2 gap-8">
           {/* Risks (Red/Amber) */}
@@ -297,7 +297,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
               <AlertTriangle className="w-6 h-6 text-red-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Common Mistakes That Get Students Disqualified</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-6">Common Mistakes That Get Students Disqualified</h3>
             <ul className="space-y-5">
               {[
                 "Missing or incomplete family financial documents during ISEE calculation.",
@@ -319,7 +319,7 @@ export default function ScholarshipsPage() {
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
               <ShieldCheck className="w-6 h-6 text-emerald-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6">How ItaloPath Protects Your Scholarship</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-6">How ItaloPath Protects Your Scholarship</h3>
             <ul className="space-y-5">
               {[
                 "Pre-assessment of your financial documents before translation to ensure correct ISEE scoring.",
@@ -341,7 +341,7 @@ export default function ScholarshipsPage() {
         <div className="mt-16 text-center">
           <Link 
             href="/contact" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-[#10A985] hover:bg-[#0D9070] rounded-xl transition-all shadow-lg hover:shadow-[#10A985]/20 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg hover:shadow-emerald-600/20 hover:-translate-y-0.5"
           >
             Get Your Family ISEE Assessed Before Applying
             <ArrowRight className="w-5 h-5" />
