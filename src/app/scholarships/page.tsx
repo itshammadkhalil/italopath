@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { 
-  ChevronRight, 
   Home, 
   UtensilsCrossed, 
   Banknote, 
@@ -30,63 +29,85 @@ export default function ScholarshipsPage() {
       {/* ════════════════════════════════════════════
           1. DYNAMIC HERO & ESTIMATOR CARD
       ════════════════════════════════════════════ */}
-      <section className="bg-slate-950 border-b border-slate-800 relative overflow-hidden">
+      <section className="bg-slate-950 border-b border-slate-800 relative overflow-hidden py-12 lg:py-14">
         {/* Subtle mesh background */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full bg-emerald-500/[0.04] blur-[120px]"></div>
           <div className="absolute bottom-[-30%] right-[-10%] w-[40%] h-[50%] rounded-full bg-blue-500/[0.03] blur-[100px]"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-24">
-          <div className="flex items-center space-x-2 text-sm font-medium text-slate-400 mb-10">
-            <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Scholarships Guide</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column (7 cols) */}
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400 mb-4">
+              💰 Need-Based Regional Funding
+            </span>
+            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Italian Regional Scholarships<br className="hidden sm:inline" /> (DSU) Guide
+            </h1>
+            <p className="text-sm lg:text-base text-slate-300 max-w-xl mt-3 leading-relaxed">
+              A complete breakdown of ISEE Parificato calculations, 100% tuition waivers, subsidized accommodation, and up to €8,500 annual living allowances.
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Zero Tuition Fees
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Monthly Cash Grants
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Free Canteen Passes
+              </span>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.1] text-sm font-semibold text-slate-200 mb-6 backdrop-blur-md">
-                💰 100% Need-Based Regional Funding
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
-                The Complete Guide to <br className="hidden lg:block"/>
-                <span className="bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">Italian Regional Scholarships (DSU)</span>
-              </h1>
-              <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-                Everything international students need to know about ISEE Parificato calculation, zero tuition, free accommodation, and up to €8,500 annual living stipends.
-              </p>
-            </div>
+          {/* Right Column (5 cols) - Modern Value Estimator Card */}
+          <div className="lg:col-span-5">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-md text-white">
+              {/* Card Header */}
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                <span className="text-sm font-bold text-white tracking-wide">Regional Benefit Estimate</span>
+                <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  Up to €8,500/yr
+                </span>
+              </div>
 
-            {/* Right Estimator Card */}
-            <div className="lg:col-span-5">
-              <div className="bg-slate-900/80 backdrop-blur-xl border border-slate-700/60 rounded-3xl p-8 shadow-2xl shadow-black/40">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-emerald-500/15 rounded-xl flex items-center justify-center">
-                    <Banknote className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Scholarship Value Estimator</h3>
+              {/* List items */}
+              <div className="space-y-3">
+                <div className="flex justify-between items-center text-xs py-1.5 border-b border-slate-800/60">
+                  <span className="text-slate-400">Cash Stipend</span>
+                  <span className="text-emerald-400 font-bold">€5,000 – €6,200/year</span>
                 </div>
+                <div className="flex justify-between items-center text-xs py-1.5 border-b border-slate-800/60">
+                  <span className="text-slate-400">Housing Support</span>
+                  <span className="text-slate-200 font-medium text-right">Free Hostel or €2,500–€3,000 Stipend</span>
+                </div>
+                <div className="flex justify-between items-center text-xs py-1.5">
+                  <span className="text-slate-400">Daily Meals</span>
+                  <span className="text-slate-200 font-medium text-right">1–2 Free Meals/Day at University Canteens</span>
+                </div>
+              </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-slate-800">
-                    <span className="text-slate-400 font-medium">Annual Cash Stipend</span>
-                    <span className="text-white font-bold">€6,200</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-slate-800">
-                    <span className="text-slate-400 font-medium">Free Housing Grant</span>
-                    <span className="text-white font-bold">€3,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-slate-800">
-                    <span className="text-slate-400 font-medium">Free Canteen Meals</span>
-                    <span className="text-white font-bold">2 meals/day</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-4">
-                    <span className="text-slate-300 font-semibold uppercase tracking-wider text-sm">Net Cost of Education</span>
-                    <span className="text-emerald-400 font-extrabold text-2xl">€0/year</span>
-                  </div>
-                </div>
+              {/* Card Summary Box */}
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3 mt-4 flex items-center justify-between">
+                <span className="text-xs text-slate-300 font-medium">Net Tuition Cost</span>
+                <span className="text-emerald-400 font-extrabold text-base">€0 / Year</span>
+              </div>
+
+              {/* Subtle text link */}
+              <div className="mt-3.5 pt-2 text-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  Calculate Your Family ISEE
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>
@@ -96,10 +117,10 @@ export default function ScholarshipsPage() {
       {/* ════════════════════════════════════════════
           2. 4-PILLAR COMPARATIVE BENEFITS
       ════════════════════════════════════════════ */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprehensive Benefits Breakdown</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+      <section className="pt-12 pb-16 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 tracking-tight">Comprehensive Benefits Breakdown</h2>
+          <p className="text-base text-slate-500 max-w-2xl mx-auto">
             A DSU scholarship offers full-spectrum support, completely removing the financial barriers to living and studying in Italy.
           </p>
         </div>
