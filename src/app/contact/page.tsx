@@ -1,19 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { 
-  Send, 
   Phone, 
   Mail, 
   MessageSquare, 
-  Clock, 
+  CheckCircle2, 
   CheckCircle,
   ArrowRight,
-  ClipboardList,
-  PhoneCall,
-  FileText,
-  UserCheck
+  Lock
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -27,325 +22,378 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1500);
+    }, 1200);
   };
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* Page Header */}
-      <section className="bg-slate-50 pt-24 pb-12 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
-            Free Eligibility Evaluation
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Submit your academic profile and our Italy education specialists will assess your eligibility for Italian universities and DSU scholarships within 24–48 hours.
-          </p>
+    <main className="min-h-screen bg-slate-50/50">
+      {/* ════════════════════════════════════════════
+          1. UNIFIED DARK HERO BANNER
+      ════════════════════════════════════════════ */}
+      <section className="bg-slate-950 text-white py-12 lg:py-14 border-b border-slate-800 relative overflow-hidden">
+        {/* Subtle mesh background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[5%] w-[40%] h-[60%] rounded-full bg-emerald-500/[0.04] blur-[100px]" />
+          <div className="absolute bottom-[-20%] right-[10%] w-[35%] h-[50%] rounded-full bg-blue-500/[0.03] blur-[100px]" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column (7 cols) */}
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400 mb-4">
+              📋 Free Academic Evaluation
+            </span>
+            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Evaluate Your Eligibility for Italy
+            </h1>
+            <p className="text-sm lg:text-base text-slate-300 max-w-xl mt-3 leading-relaxed">
+              Submit your academic scores for a comprehensive check on Italian public university admissions and DSU scholarship criteria. 100% confidential, response within 24 hours.
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Free CGPA &amp; Credit Check
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Zero Spam Policy
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Direct WhatsApp Analysis
+              </span>
+            </div>
+          </div>
+
+          {/* Right Column (5 cols) - Evaluation Perks Card */}
+          <div className="lg:col-span-5">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-md text-white">
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                <span className="text-sm font-bold text-white tracking-wide">What You Will Receive</span>
+                <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  100% Free
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                {[
+                  "Shortlist of 3–5 eligible public universities",
+                  "DSU / Regional scholarship eligibility status",
+                  "Clear document attestation roadmap (IBCC / HEC / MOFA)",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 text-xs py-1">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="text-slate-300 font-medium leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-slate-800/80 text-center">
+                <p className="text-xs text-slate-400 font-medium">
+                  No commitment required • Free expert guidance
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative items-start">
+      {/* ════════════════════════════════════════════
+          2. FORM & SIDEBAR GRID
+      ════════════════════════════════════════════ */}
+      <section className="py-12 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* LEFT: Assessment Form */}
-          <div className="w-full lg:w-2/3 flex-shrink-0">
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 sm:p-8">
+          {/* LEFT: Assessment Form (8 Columns) */}
+          <div className="lg:col-span-8">
+            <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-4">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-2">
                     <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900">Thank you!</h2>
-                  <p className="text-slate-600 text-lg max-w-md">
-                    Your profile has been submitted successfully. We'll contact you within 24–48 hours via WhatsApp to discuss your options.
+                  <h2 className="text-2xl font-bold text-slate-900">Evaluation Request Received!</h2>
+                  <p className="text-slate-600 text-sm max-w-md leading-relaxed">
+                    Our academic advisers will analyze your qualifications against entry requirements and DSU scholarship criteria. We will contact you via WhatsApp within 24 hours.
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-6 text-emerald-600 font-medium hover:text-emerald-700 transition-colors"
+                    className="mt-4 text-emerald-600 text-sm font-semibold hover:text-emerald-700 transition-colors"
                   >
-                    Submit another profile
+                    ← Submit another profile
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-4 sm:space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                      {/* Full Name */}
-                      <div>
-                        <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          id="fullName"
-                          required
-                          placeholder="Enter your full name"
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-900 mb-1">Academic &amp; Contact Profile</h2>
+                    <p className="text-xs text-slate-500">Provide accurate details for an exact qualification match.</p>
+                  </div>
 
-                      {/* WhatsApp */}
-                      <div>
-                        <label htmlFor="whatsapp" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          WhatsApp Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          id="whatsapp"
-                          required
-                          placeholder="+92 300 1234567"
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
-
-                      {/* Email */}
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          required
-                          placeholder="your.email@example.com"
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
-
-                      {/* City */}
-                      <div>
-                        <label htmlFor="city" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          City
-                        </label>
-                        <input
-                          type="text"
-                          id="city"
-                          required
-                          placeholder="e.g., Islamabad, Lahore, Karachi"
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
-
-                      {/* Education Level */}
-                      <div>
-                        <label htmlFor="educationLevel" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          Current Education Level
-                        </label>
-                        <select
-                          id="educationLevel"
-                          required
-                          defaultValue=""
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 bg-white"
-                        >
-                          <option value="" disabled>Select your education level</option>
-                          <option value="intermediate">Intermediate (FSc/ICS)</option>
-                          <option value="alevels">A-Levels</option>
-                          <option value="bachelors">Bachelor's Degree</option>
-                          <option value="masters">Master's Degree</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      {/* Passing Year & Marks / CGPA */}
-                      <div>
-                        <label htmlFor="marks" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          Passing Year & Marks / CGPA
-                        </label>
-                        <input
-                          type="text"
-                          id="marks"
-                          required
-                          placeholder="e.g., 2024 — 3.5/4.0 CGPA or 78%"
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
-
-                      {/* English Test Status */}
-                      <div>
-                        <label htmlFor="englishTest" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          English Test Status
-                        </label>
-                        <select
-                          id="englishTest"
-                          required
-                          defaultValue=""
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 bg-white"
-                        >
-                          <option value="" disabled>Select your test status</option>
-                          <option value="ielts_6_plus">IELTS (6.0+)</option>
-                          <option value="ielts_below_6">IELTS (Below 6.0)</option>
-                          <option value="pte">PTE Academic</option>
-                          <option value="epc">English Proficiency Certificate</option>
-                          <option value="not_taken">Not Yet Taken</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      {/* Target Intake */}
-                      <div>
-                        <label htmlFor="targetIntake" className="block text-sm font-medium text-slate-700 mb-1.5">
-                          Target Intake
-                        </label>
-                        <select
-                          id="targetIntake"
-                          required
-                          defaultValue=""
-                          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 bg-white"
-                        >
-                          <option value="" disabled>Select target intake</option>
-                          <option value="sep_2026">September 2026</option>
-                          <option value="feb_2027">February 2027</option>
-                          <option value="sep_2027">September 2027</option>
-                        </select>
-                      </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    {/* Full Name */}
+                    <div>
+                      <label htmlFor="fullName" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="fullName"
+                        required
+                        placeholder="e.g., Muhammad Ali"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      />
                     </div>
 
-                    {/* Additional Notes */}
+                    {/* WhatsApp */}
                     <div>
-                      <label htmlFor="notes" className="block text-sm font-medium text-slate-700 mb-1.5">
-                        Additional Notes
+                      <label htmlFor="whatsapp" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        WhatsApp Phone Number *
                       </label>
-                      <textarea
-                        id="notes"
-                        rows={4}
-                        placeholder="Any specific questions or details about your profile..."
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500 transition-all text-slate-900 placeholder:text-slate-400 resize-y"
-                      ></textarea>
+                      <input
+                        type="tel"
+                        id="whatsapp"
+                        required
+                        placeholder="+92 300 1234567"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        placeholder="your.email@example.com"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      />
+                    </div>
+
+                    {/* City */}
+                    <div>
+                      <label htmlFor="city" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Current City *
+                      </label>
+                      <input
+                        type="text"
+                        id="city"
+                        required
+                        placeholder="e.g., Islamabad, Lahore, Karachi"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      />
+                    </div>
+
+                    {/* Education Level */}
+                    <div>
+                      <label htmlFor="educationLevel" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Current Education Level *
+                      </label>
+                      <select
+                        id="educationLevel"
+                        required
+                        defaultValue=""
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      >
+                        <option value="" disabled>Select your education level</option>
+                        <option value="intermediate">Intermediate (FSc / ICS / ICom)</option>
+                        <option value="alevels">A-Levels</option>
+                        <option value="bachelors">Bachelor&apos;s Degree (16 Years)</option>
+                        <option value="masters">Master&apos;s Degree (18 Years)</option>
+                        <option value="other">Other Qualification</option>
+                      </select>
+                    </div>
+
+                    {/* Passing Year & Marks / CGPA */}
+                    <div>
+                      <label htmlFor="marks" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Passing Year &amp; Marks / CGPA *
+                      </label>
+                      <input
+                        type="text"
+                        id="marks"
+                        required
+                        placeholder="e.g., 2024 — 3.4/4.0 CGPA or 78%"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      />
+                    </div>
+
+                    {/* English Test Status */}
+                    <div>
+                      <label htmlFor="englishTest" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        English Test Status *
+                      </label>
+                      <select
+                        id="englishTest"
+                        required
+                        defaultValue=""
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      >
+                        <option value="" disabled>Select test status</option>
+                        <option value="ielts_6_plus">IELTS (6.0 or higher)</option>
+                        <option value="ielts_below_6">IELTS (Below 6.0)</option>
+                        <option value="pte">PTE Academic</option>
+                        <option value="epc">English Proficiency Certificate (EPC)</option>
+                        <option value="not_taken">Not Yet Taken / Planning to Take</option>
+                      </select>
+                    </div>
+
+                    {/* Target Intake */}
+                    <div>
+                      <label htmlFor="targetIntake" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Target Intake *
+                      </label>
+                      <select
+                        id="targetIntake"
+                        required
+                        defaultValue=""
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                      >
+                        <option value="" disabled>Select target intake</option>
+                        <option value="sep_2026">September 2026 (Fall)</option>
+                        <option value="feb_2027">February 2027 (Spring)</option>
+                        <option value="sep_2027">September 2027</option>
+                      </select>
                     </div>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-xl py-3.5 px-4 transition-colors flex items-center justify-center gap-2 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4}></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Submitting...
-                      </span>
-                    ) : (
-                      <>
-                        Submit Profile for Review
-                        <Send className="w-5 h-5" />
-                      </>
-                    )}
-                  </button>
+                  {/* Additional Notes */}
+                  <div>
+                    <label htmlFor="notes" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Intended Field of Study or Special Questions
+                    </label>
+                    <textarea
+                      id="notes"
+                      rows={3}
+                      placeholder="e.g., Interested in Computer Science or Mechanical Engineering masters programs. Need guidance on DSU ISEE requirements."
+                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all resize-y"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed text-sm"
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4}></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Submitting Profile...
+                        </span>
+                      ) : (
+                        <>
+                          Request Comprehensive Profile Review
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                    <p className="text-xs text-slate-500 text-center mt-3 flex items-center justify-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-slate-400" />
+                      Your academic information is never shared with third parties.
+                    </p>
+                  </div>
                 </form>
               )}
             </div>
           </div>
 
-          {/* RIGHT: Contact Sidebar */}
-          <div className="w-full lg:w-1/3 flex-shrink-0 flex flex-col gap-6 lg:sticky lg:top-24">
+          {/* RIGHT: Contact Sidebar (4 Columns) */}
+          <div className="lg:col-span-4 sticky top-24 space-y-5">
             
             {/* Card 1: Direct Contact */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4">Direct Contact</h3>
-              <div className="space-y-4">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 sm:p-6">
+              <h3 className="text-base font-bold text-slate-900 mb-4">Direct Contact</h3>
+              <div className="space-y-3.5">
                 <div className="flex items-center gap-3 text-slate-600">
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-slate-700" />
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-slate-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-900">Phone</p>
-                    <a href="tel:+923001234567" className="text-sm hover:text-emerald-600 transition-colors">+92 300 123 4567</a>
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Phone</p>
+                    <a href="tel:+923001234567" className="text-sm font-medium text-slate-900 hover:text-emerald-600 transition-colors">
+                      +92 300 123 4567
+                    </a>
                   </div>
                 </div>
+
                 <div className="flex items-center gap-3 text-slate-600">
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-slate-700" />
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-slate-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-900">Email</p>
-                    <a href="mailto:info@italopath.com" className="text-sm hover:text-emerald-600 transition-colors">info@italopath.com</a>
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Email</p>
+                    <a href="mailto:info@italopath.com" className="text-sm font-medium text-slate-900 hover:text-emerald-600 transition-colors">
+                      info@italopath.com
+                    </a>
                   </div>
                 </div>
-                
-                <a 
-                  href="https://wa.me/923001234567" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="mt-6 w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-medium rounded-xl py-3 px-4 transition-colors flex items-center justify-center gap-2 shadow-sm"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                  Chat on WhatsApp
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </a>
+
+                <div className="pt-2">
+                  <a 
+                    href="https://wa.me/923001234567" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl py-3 font-medium flex items-center justify-center gap-2 shadow-sm transition-colors text-sm"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    Chat on WhatsApp
+                    <ArrowRight className="w-4 h-4 ml-0.5" />
+                  </a>
+                </div>
+
+                <div className="text-[11px] text-slate-500 text-center pt-1 border-t border-slate-100 mt-2">
+                  Mon–Sat: 10:00 AM – 7:00 PM (PKT) • Typical response &lt; 24h
+                </div>
               </div>
             </div>
 
-            {/* Card 2: Office Hours */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-emerald-500" />
-                Office Hours
-              </h3>
-              <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex justify-between items-center">
-                  <span className="font-medium text-slate-700">Monday – Saturday</span>
-                  <span>10:00 AM – 7:00 PM (PKT)</span>
-                </li>
-                <li className="flex justify-between items-center">
-                  <span className="font-medium text-slate-700">Sunday</span>
-                  <span className="text-slate-400">Closed</span>
-                </li>
-              </ul>
-              <div className="mt-4 pt-4 border-t border-slate-100">
-                <p className="text-sm text-slate-600 flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-emerald-500" />
-                  Response time: <span className="font-medium text-slate-900">Within 24 hours</span>
-                </p>
+            {/* Card 2: What Happens Next? */}
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 sm:p-6">
+              <div className="flex items-center justify-between mb-4 pb-2.5 border-b border-slate-100">
+                <h3 className="text-base font-bold text-slate-900">What Happens Next?</h3>
+                <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  3 Steps
+                </span>
               </div>
-            </div>
 
-            {/* Card 3: What Happens Next? */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 relative overflow-hidden">
-              <h3 className="text-lg font-bold text-slate-900 mb-5 relative z-10">What Happens Next?</h3>
-              <div className="space-y-4 relative z-10">
-                <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-emerald-50 border-2 border-white flex items-center justify-center shrink-0 relative z-20">
-                    <ClipboardList className="w-4 h-4 text-emerald-600" />
+              <div className="space-y-3.5">
+                {[
+                  {
+                    num: "01",
+                    title: "Profile Review",
+                    desc: "Our specialists analyze transcripts, GPA, and degree equivalency for Italian public universities.",
+                  },
+                  {
+                    num: "02",
+                    title: "Matching Check",
+                    desc: "Cross-reference course catalogs and regional DSU scholarship income thresholds.",
+                  },
+                  {
+                    num: "03",
+                    title: "Direct WhatsApp Consultation",
+                    desc: "Receive your tailored eligibility report and next steps within 24 hours.",
+                  },
+                ].map((step, idx) => (
+                  <div key={idx} className="flex gap-3 items-start">
+                    <span className="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-100">
+                      {step.num}
+                    </span>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900">{step.title}</h4>
+                      <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">{step.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Step 1: Profile Review</h4>
-                    <p className="text-xs text-slate-500 mt-0.5">24–48 hrs</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center shrink-0 relative z-20">
-                    <PhoneCall className="w-4 h-4 text-slate-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Step 2: Eligibility Assessment Call</h4>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center shrink-0 relative z-20">
-                    <FileText className="w-4 h-4 text-slate-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Step 3: Customized Plan & Fee Quote</h4>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center shrink-0 relative z-20">
-                    <UserCheck className="w-4 h-4 text-slate-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Step 4: Onboarding & Document Collection</h4>
-                  </div>
-                </div>
-                
-                {/* Connecting Line */}
-                <div className="absolute left-[15px] top-4 bottom-4 w-0.5 bg-slate-100 z-10"></div>
+                ))}
               </div>
             </div>
 
