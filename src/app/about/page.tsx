@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { 
   ChevronDown, 
-  ChevronRight, 
   Search, 
   FileCheck, 
   ShieldAlert, 
@@ -50,41 +48,98 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════
           1. UNIFIED PREMIUM HERO
       ════════════════════════════════════════════ */}
-      <section className="bg-slate-950 text-white py-20 lg:py-24 px-6 border-b border-slate-800 relative overflow-hidden">
+      <section className="bg-slate-950 text-white py-12 lg:py-14 px-6 border-b border-slate-800 relative overflow-hidden">
         {/* Subtle mesh background */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] left-[10%] w-[40%] h-[60%] rounded-full bg-emerald-500/[0.04] blur-[100px]"></div>
           <div className="absolute bottom-[-10%] right-[10%] w-[30%] h-[50%] rounded-full bg-blue-500/[0.03] blur-[100px]"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-2 text-sm font-medium text-slate-400 mb-8 animate-fade-in-up">
-            <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">About Us</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column (7 cols) */}
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400 mb-4">
+              🇮🇹 Ethical Advisory Standard
+            </span>
+            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              The Anti-Consultancy Approach
+            </h1>
+            <p className="text-sm lg:text-base text-slate-300 max-w-xl mt-3 leading-relaxed">
+              Built out of frustration with misleading agents, hidden charges, and fake visa guarantees. We provide strictly legal, transparent pathways to Italian public universities.
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Direct Student Support
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                100% Legal Framework
+              </span>
+              <span className="text-slate-700">•</span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span>
+                Zero False Guarantees
+              </span>
+            </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold tracking-wide mb-6 animate-fade-in-up">
-            🇮🇹 The Anti-Consultancy Philosophy
+          {/* Right Column (5 cols) - Creed Card */}
+          <div className="lg:col-span-5">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-md text-white">
+              {/* Card Header */}
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                <span className="text-sm font-bold text-white tracking-wide">Core Operating Principles</span>
+                <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  Strict Policy
+                </span>
+              </div>
+
+              {/* 3 bullet rows */}
+              <div className="space-y-3">
+                {[
+                  {
+                    title: "Zero Commission from Universities",
+                    desc: "No biased recommendations",
+                  },
+                  {
+                    title: "Full Portal Ownership",
+                    desc: "You keep your own Universitaly logins",
+                  },
+                  {
+                    title: "Document Integrity",
+                    desc: "We reject forged or altered paperwork",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 text-xs py-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-semibold text-slate-200">{item.title}</span>
+                      <span className="text-slate-400 block text-[11px] mt-0.5">({item.desc})</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Card Footer */}
+              <div className="mt-4 pt-3 border-t border-slate-800/80 text-center">
+                <p className="text-xs text-slate-400 font-medium italic">
+                  Our commitment to merit-based education.
+                </p>
+              </div>
+            </div>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight animate-fade-in-up delay-100">
-            About ItaloPath
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Built out of frustration with misleading agents, hidden charges, and fake visa guarantees. We provide strictly legal, transparent pathways to Italian public universities.
-          </p>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════
           2. BUILT ON TRANSPARENCY
       ════════════════════════════════════════════ */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Built on Absolute Transparency</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">We don't sell dreams; we execute legal pathways. Our process is rooted in honesty and compliance with Italian law.</p>
+      <section className="pt-12 pb-16 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 tracking-tight">Built on Absolute Transparency</h2>
+          <p className="text-base text-slate-500 max-w-2xl mx-auto">We don&apos;t sell dreams; we execute legal pathways. Our process is rooted in honesty and compliance with Italian law.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
