@@ -16,21 +16,43 @@ import {
   Languages,
   Calendar,
   FileText,
-  ChevronDown
+  ChevronDown,
+  AlertCircle
 } from "lucide-react";
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate network request
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mgaojybz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        setErrorMessage("Something went wrong. Please try again or reach out directly via WhatsApp.");
+      }
+    } catch {
+      setErrorMessage("Something went wrong. Please try again or reach out directly via WhatsApp.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -122,12 +144,17 @@ export default function ContactPage() {
                   <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-2">
                     <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900">Evaluation Request Received!</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    Assessment Submitted Successfully!
+                  </h2>
                   <p className="text-slate-600 text-sm max-w-md leading-relaxed">
-                    Our academic advisers will analyze your qualifications against entry requirements and DSU scholarship criteria. We will contact you via WhatsApp within 24 hours.
+                    Our education specialists will review your academic profile and reach out via WhatsApp within 24 hours.
                   </p>
                   <button 
-                    onClick={() => setIsSubmitted(false)}
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setErrorMessage(null);
+                    }}
                     className="mt-4 text-emerald-600 text-sm font-semibold hover:text-emerald-700 transition-colors"
                   >
                     ← Submit another profile
@@ -167,6 +194,7 @@ export default function ContactPage() {
                           <input
                             type="text"
                             id="fullName"
+                            name="fullName"
                             required
                             placeholder="e.g., Muhammad Ali"
                             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
@@ -184,6 +212,7 @@ export default function ContactPage() {
                           <input
                             type="tel"
                             id="whatsapp"
+                            name="whatsapp"
                             required
                             placeholder="+92 300 1234567"
                             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
@@ -201,6 +230,7 @@ export default function ContactPage() {
                           <input
                             type="email"
                             id="email"
+                            name="email"
                             required
                             placeholder="your.email@example.com"
                             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
@@ -218,6 +248,7 @@ export default function ContactPage() {
                           <input
                             type="text"
                             id="city"
+                            name="city"
                             required
                             placeholder="e.g., Islamabad, Lahore, Karachi"
                             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
@@ -245,6 +276,7 @@ export default function ContactPage() {
                           <GraduationCap className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
                           <select
                             id="educationLevel"
+                            name="educationLevel"
                             required
                             defaultValue=""
                             className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
@@ -270,6 +302,7 @@ export default function ContactPage() {
                           <input
                             type="text"
                             id="marks"
+                            name="marksCgpa"
                             required
                             placeholder="e.g., 2024 — 3.4/4.0 CGPA or 78%"
                             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
@@ -286,6 +319,7 @@ export default function ContactPage() {
                           <Languages className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
                           <select
                             id="englishTest"
+                            name="englishTestStatus"
                             required
                             defaultValue=""
                             className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
@@ -310,6 +344,7 @@ export default function ContactPage() {
                           <Calendar className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
                           <select
                             id="targetIntake"
+                            name="targetIntake"
                             required
                             defaultValue=""
                             className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
@@ -334,6 +369,7 @@ export default function ContactPage() {
                         <FileText className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
                         <textarea
                           id="notes"
+                          name="intendedFieldOrQuestions"
                           rows={3}
                           placeholder="e.g., Interested in Computer Science or Mechanical Engineering masters programs. Need guidance on DSU ISEE requirements."
                           className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all resize-y"
@@ -341,6 +377,14 @@ export default function ContactPage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Error Notification Banner */}
+                  {errorMessage && (
+                    <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium flex items-center gap-2.5">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   {/* High-Impact CTA Button */}
                   <div className="pt-2">
@@ -355,7 +399,7 @@ export default function ContactPage() {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4}></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Submitting Profile...
+                          Submitting Assessment...
                         </span>
                       ) : (
                         <>
