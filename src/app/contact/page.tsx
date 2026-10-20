@@ -33,6 +33,16 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // Bot submission filter: Check if honeypot field is filled
+    if (formData.get("_gotcha")) {
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        form.reset();
+      }, 500);
+      return;
+    }
+
     try {
       const response = await fetch("https://formspree.io/f/mgaojybz", {
         method: "POST",
@@ -162,6 +172,15 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot Anti-Bot Field */}
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden absolute -left-[9999px] opacity-0 pointer-events-none"
+                  />
                   {/* Form Header & Micro-Trust */}
                   <div>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-700 mb-2.5">
