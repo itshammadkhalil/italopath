@@ -8,7 +8,15 @@ import {
   CheckCircle2, 
   CheckCircle,
   ArrowRight,
-  Lock
+  Lock,
+  User,
+  MapPin,
+  GraduationCap,
+  Award,
+  Languages,
+  Calendar,
+  FileText,
+  ChevronDown
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -108,7 +116,7 @@ export default function ContactPage() {
           
           {/* LEFT: Assessment Form (8 Columns) */}
           <div className="lg:col-span-8">
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-sm">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
                   <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-2">
@@ -127,160 +135,219 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Form Header & Micro-Trust */}
                   <div>
-                    <h2 className="text-lg font-bold text-slate-900 mb-1">Academic &amp; Contact Profile</h2>
-                    <p className="text-xs text-slate-500">Provide accurate details for an exact qualification match.</p>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-700 mb-2.5">
+                      ⚡ Free 2-Minute Assessment
+                    </span>
+                    <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+                      Academic Profile &amp; Eligibility Evaluation
+                    </h2>
+                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                      Submit your details for official course shortlisting and DSU regional grant eligibility.
+                    </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                    {/* Full Name */}
-                    <div>
-                      <label htmlFor="fullName" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        required
-                        placeholder="e.g., Muhammad Ali"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      />
+                  {/* Section 1: Contact Information */}
+                  <div className="space-y-4">
+                    <div className="pb-1.5 border-b border-slate-100">
+                      <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                        Contact Information
+                      </h3>
                     </div>
 
-                    {/* WhatsApp */}
-                    <div>
-                      <label htmlFor="whatsapp" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        WhatsApp Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        id="whatsapp"
-                        required
-                        placeholder="+92 300 1234567"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      />
-                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                      {/* Full Name */}
+                      <div>
+                        <label htmlFor="fullName" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Full Name *
+                        </label>
+                        <div className="relative">
+                          <User className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <input
+                            type="text"
+                            id="fullName"
+                            required
+                            placeholder="e.g., Muhammad Ali"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                          />
+                        </div>
+                      </div>
 
-                    {/* Email */}
-                    <div>
-                      <label htmlFor="email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        placeholder="your.email@example.com"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      />
-                    </div>
+                      {/* WhatsApp Phone Number */}
+                      <div>
+                        <label htmlFor="whatsapp" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          WhatsApp Phone Number *
+                        </label>
+                        <div className="relative">
+                          <Phone className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <input
+                            type="tel"
+                            id="whatsapp"
+                            required
+                            placeholder="+92 300 1234567"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                          />
+                        </div>
+                      </div>
 
-                    {/* City */}
-                    <div>
-                      <label htmlFor="city" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Current City *
-                      </label>
-                      <input
-                        type="text"
-                        id="city"
-                        required
-                        placeholder="e.g., Islamabad, Lahore, Karachi"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      />
-                    </div>
+                      {/* Email Address */}
+                      <div>
+                        <label htmlFor="email" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Email Address *
+                        </label>
+                        <div className="relative">
+                          <Mail className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="your.email@example.com"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                          />
+                        </div>
+                      </div>
 
-                    {/* Education Level */}
-                    <div>
-                      <label htmlFor="educationLevel" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Current Education Level *
-                      </label>
-                      <select
-                        id="educationLevel"
-                        required
-                        defaultValue=""
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      >
-                        <option value="" disabled>Select your education level</option>
-                        <option value="intermediate">Intermediate (FSc / ICS / ICom)</option>
-                        <option value="alevels">A-Levels</option>
-                        <option value="bachelors">Bachelor&apos;s Degree (16 Years)</option>
-                        <option value="masters">Master&apos;s Degree (18 Years)</option>
-                        <option value="other">Other Qualification</option>
-                      </select>
-                    </div>
-
-                    {/* Passing Year & Marks / CGPA */}
-                    <div>
-                      <label htmlFor="marks" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Passing Year &amp; Marks / CGPA *
-                      </label>
-                      <input
-                        type="text"
-                        id="marks"
-                        required
-                        placeholder="e.g., 2024 — 3.4/4.0 CGPA or 78%"
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      />
-                    </div>
-
-                    {/* English Test Status */}
-                    <div>
-                      <label htmlFor="englishTest" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        English Test Status *
-                      </label>
-                      <select
-                        id="englishTest"
-                        required
-                        defaultValue=""
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      >
-                        <option value="" disabled>Select test status</option>
-                        <option value="ielts_6_plus">IELTS (6.0 or higher)</option>
-                        <option value="ielts_below_6">IELTS (Below 6.0)</option>
-                        <option value="pte">PTE Academic</option>
-                        <option value="epc">English Proficiency Certificate (EPC)</option>
-                        <option value="not_taken">Not Yet Taken / Planning to Take</option>
-                      </select>
-                    </div>
-
-                    {/* Target Intake */}
-                    <div>
-                      <label htmlFor="targetIntake" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Target Intake *
-                      </label>
-                      <select
-                        id="targetIntake"
-                        required
-                        defaultValue=""
-                        className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                      >
-                        <option value="" disabled>Select target intake</option>
-                        <option value="sep_2026">September 2026 (Fall)</option>
-                        <option value="feb_2027">February 2027 (Spring)</option>
-                        <option value="sep_2027">September 2027</option>
-                      </select>
+                      {/* Current City */}
+                      <div>
+                        <label htmlFor="city" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Current City *
+                        </label>
+                        <div className="relative">
+                          <MapPin className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <input
+                            type="text"
+                            id="city"
+                            required
+                            placeholder="e.g., Islamabad, Lahore, Karachi"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Additional Notes */}
-                  <div>
-                    <label htmlFor="notes" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Intended Field of Study or Special Questions
-                    </label>
-                    <textarea
-                      id="notes"
-                      rows={3}
-                      placeholder="e.g., Interested in Computer Science or Mechanical Engineering masters programs. Need guidance on DSU ISEE requirements."
-                      className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all resize-y"
-                    />
+                  {/* Section 2: Academic Background */}
+                  <div className="space-y-4 pt-1">
+                    <div className="pb-1.5 border-b border-slate-100">
+                      <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                        Academic Background
+                      </h3>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                      {/* Current Education Level */}
+                      <div>
+                        <label htmlFor="educationLevel" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Current Education Level *
+                        </label>
+                        <div className="relative">
+                          <GraduationCap className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <select
+                            id="educationLevel"
+                            required
+                            defaultValue=""
+                            className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
+                          >
+                            <option value="" disabled>Select your education level</option>
+                            <option value="intermediate">Intermediate (FSc / ICS / ICom)</option>
+                            <option value="alevels">A-Levels</option>
+                            <option value="bachelors">Bachelor&apos;s Degree (16 Years)</option>
+                            <option value="masters">Master&apos;s Degree (18 Years)</option>
+                            <option value="other">Other Qualification</option>
+                          </select>
+                          <ChevronDown className="absolute right-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                        </div>
+                      </div>
+
+                      {/* Passing Year & Marks / CGPA */}
+                      <div>
+                        <label htmlFor="marks" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Passing Year &amp; Marks / CGPA *
+                        </label>
+                        <div className="relative">
+                          <Award className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <input
+                            type="text"
+                            id="marks"
+                            required
+                            placeholder="e.g., 2024 — 3.4/4.0 CGPA or 78%"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                          />
+                        </div>
+                      </div>
+
+                      {/* English Test Status */}
+                      <div>
+                        <label htmlFor="englishTest" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          English Test Status *
+                        </label>
+                        <div className="relative">
+                          <Languages className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <select
+                            id="englishTest"
+                            required
+                            defaultValue=""
+                            className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
+                          >
+                            <option value="" disabled>Select test status</option>
+                            <option value="ielts_6_plus">IELTS (6.0 or higher)</option>
+                            <option value="ielts_below_6">IELTS (Below 6.0)</option>
+                            <option value="pte">PTE Academic</option>
+                            <option value="epc">English Proficiency Certificate (EPC)</option>
+                            <option value="not_taken">Not Yet Taken / Planning to Take</option>
+                          </select>
+                          <ChevronDown className="absolute right-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                        </div>
+                      </div>
+
+                      {/* Target Intake */}
+                      <div>
+                        <label htmlFor="targetIntake" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                          Target Intake *
+                        </label>
+                        <div className="relative">
+                          <Calendar className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                          <select
+                            id="targetIntake"
+                            required
+                            defaultValue=""
+                            className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all appearance-none cursor-pointer"
+                          >
+                            <option value="" disabled>Select target intake</option>
+                            <option value="sep_2027">September 2027 (Fall Intake)</option>
+                            <option value="feb_2028">February 2028 (Spring Intake - Select Programs)</option>
+                            <option value="sep_2028">September 2028 (Future Planning)</option>
+                            <option value="undecided">General Counseling / Undecided</option>
+                          </select>
+                          <ChevronDown className="absolute right-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Additional Notes */}
+                    <div className="pt-1">
+                      <label htmlFor="notes" className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+                        Intended Field of Study or Special Questions
+                      </label>
+                      <div className="relative">
+                        <FileText className="absolute left-3.5 top-3 text-slate-400 w-4 h-4 pointer-events-none" />
+                        <textarea
+                          id="notes"
+                          rows={3}
+                          placeholder="e.g., Interested in Computer Science or Mechanical Engineering masters programs. Need guidance on DSU ISEE requirements."
+                          className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all resize-y"
+                        />
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Submit Button */}
+                  {/* High-Impact CTA Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed text-sm"
+                      className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
@@ -292,14 +359,14 @@ export default function ContactPage() {
                         </span>
                       ) : (
                         <>
-                          Request Comprehensive Profile Review
-                          <ArrowRight className="w-4 h-4" />
+                          <span>Submit for Immediate Eligibility Review</span>
+                          <ArrowRight className="w-4 h-4 ml-0.5" />
                         </>
                       )}
                     </button>
-                    <p className="text-xs text-slate-500 text-center mt-3 flex items-center justify-center gap-1.5">
-                      <Lock className="w-3.5 h-3.5 text-slate-400" />
-                      Your academic information is never shared with third parties.
+                    <p className="text-xs text-slate-400 text-center mt-3 flex items-center justify-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>256-bit Encrypted • Strictly Confidential • Zero Spam Guarantee</span>
                     </p>
                   </div>
                 </form>
