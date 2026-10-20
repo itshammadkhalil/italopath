@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://italopath.com'),
+  metadataBase: new URL('https://italopath.tech'),
   title: {
     default: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
     template: "%s | ItaloPath",

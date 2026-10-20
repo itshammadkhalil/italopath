@@ -253,10 +253,10 @@ export default function TermsOfServicePage() {
               <p className="text-slate-600 leading-relaxed">
                 For questions about these Terms of Service, contact us at{" "}
                 <a
-                  href="mailto:info@italopath.com"
+                  href="mailto:info@italopath.tech"
                   className="text-[#10A985] font-medium hover:underline"
                 >
-                  info@italopath.com
+                  info@italopath.tech
                 </a>
                 .
               </p>

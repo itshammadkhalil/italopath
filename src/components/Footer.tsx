@@ -4,7 +4,6 @@ import {
   Mail,
   Phone,
   Clock,
-  MapPin,
   ArrowUpRight,
   MessageCircle,
 } from "lucide-react";
@@ -126,8 +125,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-emerald mt-0.5 shrink-0" />
-                <a href="mailto:info@italopath.com" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">
-                  info@italopath.com
+                <a href="mailto:info@italopath.tech" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">
+                  info@italopath.tech
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -136,10 +135,6 @@ export default function Footer() {
                   <p className="text-sm text-slate-300">Office Hours</p>
                   <p className="text-xs text-slate-500">Mon–Sat: 10:00 AM – 7:00 PM</p>
                 </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-emerald mt-0.5 shrink-0" />
-                <p className="text-sm text-slate-300">Islamabad, Pakistan</p>
               </li>
             </ul>
           </div>

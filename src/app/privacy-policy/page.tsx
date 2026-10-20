@@ -225,10 +225,10 @@ export default function PrivacyPolicyPage() {
                 For any questions, concerns, or data deletion requests regarding
                 this Privacy Policy, please contact us at{" "}
                 <a
-                  href="mailto:info@italopath.com"
+                  href="mailto:info@italopath.tech"
                   className="text-[#10A985] font-medium hover:underline"
                 >
-                  info@italopath.com
+                  info@italopath.tech
                 </a>
                 .
               </p>

@@ -240,10 +240,10 @@ export default function RefundPolicyPage() {
               <p className="text-slate-600 leading-relaxed">
                 All refund inquiries must be submitted in writing to{" "}
                 <a
-                  href="mailto:info@italopath.com"
+                  href="mailto:info@italopath.tech"
                   className="text-[#10A985] font-medium hover:underline"
                 >
-                  info@italopath.com
+                  info@italopath.tech
                 </a>{" "}
                 with the subject line &ldquo;Refund Request — [Your Name]&rdquo;.
                 We will respond within 5 business days.

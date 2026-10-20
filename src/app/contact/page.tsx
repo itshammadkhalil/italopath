@@ -399,8 +399,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Email</p>
-                    <a href="mailto:info@italopath.com" className="text-sm font-medium text-slate-900 hover:text-emerald-600 transition-colors">
-                      info@italopath.com
+                    <a href="mailto:info@italopath.tech" className="text-sm font-medium text-slate-900 hover:text-emerald-600 transition-colors">
+                      info@italopath.tech
                     </a>
                   </div>
                 </div>

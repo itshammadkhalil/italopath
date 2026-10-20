@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://italopath.com';
+const BASE_URL = 'https://italopath.tech';
 
 const routes = [
   '/',
