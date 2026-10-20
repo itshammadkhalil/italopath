@@ -441,12 +441,25 @@ export default function ContactPage() {
           <div className="lg:col-span-4 space-y-6">
             
             {/* Card 1: Direct Contact */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 sm:p-6">
-              <h3 className="text-base font-bold text-slate-900 mb-4">Direct Contact</h3>
-              <div className="space-y-3.5">
+            <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+              {/* Header */}
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-700">
+                  ⚡ Quick Response Line
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 mt-2 tracking-tight">
+                  Prefer Instant Assistance?
+                </h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                  Skip the form and connect directly with our senior Italy visa counselor.
+                </p>
+              </div>
+
+              {/* Channels List */}
+              <div className="space-y-3.5 mt-5">
                 <div className="flex items-center gap-3 text-slate-600">
-                  <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-slate-600" />
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
+                    <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Phone</p>
@@ -457,8 +470,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-3 text-slate-600">
-                  <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-slate-600" />
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Email</p>
@@ -473,57 +486,76 @@ export default function ContactPage() {
                     href="https://wa.me/923001234567" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl py-3 font-medium flex items-center justify-center gap-2 shadow-sm transition-colors text-sm"
+                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3 rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 text-sm"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    Chat on WhatsApp
+                    <span>Chat on WhatsApp</span>
                     <ArrowRight className="w-4 h-4 ml-0.5" />
                   </a>
                 </div>
+              </div>
 
-                <div className="text-[11px] text-slate-500 text-center pt-1 border-t border-slate-100 mt-2">
-                  Mon–Sat: 10:00 AM – 7:00 PM (PKT) • Typical response &lt; 24h
-                </div>
+              {/* Operational Note */}
+              <div className="mt-5 -mx-6 -mb-6 bg-slate-50 border-t border-slate-100 px-5 py-3 rounded-b-2xl">
+                <p className="text-[11px] text-slate-500 text-center font-medium">
+                  Mon–Sat: 10:00 AM – 7:00 PM PKT • Typical WhatsApp reply in &lt; 15 mins
+                </p>
               </div>
             </div>
 
             {/* Card 2: What Happens Next? */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 sm:p-6">
-              <div className="flex items-center justify-between mb-4 pb-2.5 border-b border-slate-100">
-                <h3 className="text-base font-bold text-slate-900">What Happens Next?</h3>
-                <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+            <div className="bg-slate-900 border border-slate-800 text-white rounded-2xl p-6 shadow-xl relative overflow-hidden">
+              {/* Background Accent */}
+              <div className="absolute top-0 right-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6 pb-3 border-b border-slate-800 relative z-10">
+                <h3 className="text-base font-bold text-white tracking-wide">What Happens Next?</h3>
+                <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
                   3 Steps
                 </span>
               </div>
 
-              <div className="space-y-3.5">
-                {[
-                  {
-                    num: "01",
-                    title: "Profile Review",
-                    desc: "Our specialists analyze transcripts, GPA, and degree equivalency for Italian public universities.",
-                  },
-                  {
-                    num: "02",
-                    title: "Matching Check",
-                    desc: "Cross-reference course catalogs and regional DSU scholarship income thresholds.",
-                  },
-                  {
-                    num: "03",
-                    title: "Direct WhatsApp Consultation",
-                    desc: "Receive your tailored eligibility report and next steps within 24 hours.",
-                  },
-                ].map((step, idx) => (
-                  <div key={idx} className="flex gap-3 items-start">
-                    <span className="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-emerald-100">
-                      {step.num}
-                    </span>
-                    <div>
-                      <h4 className="text-xs font-bold text-slate-900">{step.title}</h4>
-                      <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">{step.desc}</p>
-                    </div>
+              {/* Vertical Stepper Flow */}
+              <div className="border-l border-slate-800 ml-3.5 space-y-6 relative z-10">
+                {/* Step 01 */}
+                <div className="relative pl-6">
+                  <span className="absolute -left-3.5 top-0 w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 text-xs font-bold flex items-center justify-center">
+                    01
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">Initial Profile Audit</h4>
+                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                      Evaluation of GPA, 12/16-year credit match, and course availability.
+                    </p>
                   </div>
-                ))}
+                </div>
+
+                {/* Step 02 */}
+                <div className="relative pl-6">
+                  <span className="absolute -left-3.5 top-0 w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 text-xs font-bold flex items-center justify-center">
+                    02
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">DSU &amp; Tuition Assessment</h4>
+                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                      Income bracket mapping for regional zero-tuition and living stipends.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 03 */}
+                <div className="relative pl-6">
+                  <span className="absolute -left-3.5 top-0 w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 text-xs font-bold flex items-center justify-center">
+                    03
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">Direct WhatsApp Action Plan</h4>
+                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                      Tailored eligibility report and next steps delivered within 24 hours.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
