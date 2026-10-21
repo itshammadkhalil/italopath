@@ -21,17 +21,18 @@ export const metadata: Metadata = {
     template: "%s | ItaloPath",
   },
   description:
-    "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
+    "Top consultancy for Pakistani students applying to Italian public universities for 2027/2028 intakes. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
   keywords: [
-    "Italy study visa Pakistan",
-    "DSU scholarship Italy",
-    "Universitaly pre enrolment",
+    "Italy study visa Pakistan 2027",
+    "Italy study visa 2027 2028",
+    "DSU scholarship Italy 2027",
+    "Universitaly pre enrolment 2027",
     "CIMEA statement of comparability",
     "free education in Italy",
     "Italian student visa requirements",
     "study in Italy without IELTS",
     "ISEE Parificato",
-    "Italian university admission",
+    "Italian university admission 2027",
     "ER.GO scholarship",
   ],
   openGraph: {
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
     siteName: 'ItaloPath',
     title: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
     description:
-      "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
+      "Top consultancy for Pakistani students applying to Italian public universities for 2027/2028 intakes. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
   },
   twitter: {
     card: 'summary_large_image',
     title: "ItaloPath | Italy Study Visa & DSU Scholarship Consultants",
     description:
-      "Top consultancy for Pakistani students applying to Italian public universities. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
+      "Top consultancy for Pakistani students applying to Italian public universities for 2027/2028 intakes. Secure 100% tuition waivers, €8,500/year DSU regional scholarships, Universitaly filings, and verified visa dossier handling.",
   },
 };
 

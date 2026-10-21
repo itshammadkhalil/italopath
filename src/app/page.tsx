@@ -57,7 +57,7 @@ export default function Home() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10A985] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10A985]"></span>
                   </span>
-                  🇮🇹 Italian Intakes 2026/2027 Open
+                  🇮🇹 Italian Intakes 2027/2028 Open
                 </span>
               </div>
 
@@ -149,7 +149,7 @@ export default function Home() {
                     <Globe className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-white leading-tight">Universitaly 2026</div>
+                    <div className="text-sm font-bold text-white leading-tight">Universitaly 2027</div>
                     <div className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Verified Applications</div>
                   </div>
                 </div>
@@ -619,7 +619,7 @@ export default function Home() {
                 color: "bg-blue-600",
                 author: "Ahmed R.",
                 course: "MSc Data Science, University of Bologna",
-                intake: "2025/2026 Intake"
+                intake: "2025/2026 Placed"
               },
               {
                 stars: 5,
@@ -632,7 +632,7 @@ export default function Home() {
                 color: "bg-rose-600",
                 author: "Fatima K.",
                 course: "MSc International Relations, Sapienza University",
-                intake: "2024/2025 Intake"
+                intake: "2024/2025 Placed"
               },
               {
                 stars: 5,
@@ -645,7 +645,7 @@ export default function Home() {
                 color: "bg-violet-600",
                 author: "Hassan M.",
                 course: "MEng Mechanical Engineering, PoliMi",
-                intake: "2025/2026 Intake"
+                intake: "2025/2026 Placed"
               }
             ].map((t, idx) => (
               <div key={idx} className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-emerald-300/60 transition-all duration-300 flex flex-col">

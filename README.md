@@ -147,4 +147,4 @@ ItaloPath is an independent educational consultancy and is **not affiliated with
 
 ---
 
-© 2026 ItaloPath. All rights reserved.
+© 2026–2027 ItaloPath. All rights reserved. Supporting 2027/2028 Intakes.

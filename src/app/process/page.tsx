@@ -210,7 +210,7 @@ export default function ProcessPage() {
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
                 <span className="text-sm font-bold text-white tracking-wide">Roadmap At A Glance</span>
                 <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
-                  2026/2027 Intakes
+                  2027/2028 Intakes
                 </span>
               </div>
 
@@ -512,7 +512,7 @@ export default function ProcessPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#10A985] hover:bg-[#0D9070] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#10A985]/20 text-base sm:text-lg"
             >
-              Get Evaluated for 2026/2027 Intakes
+              Get Evaluated for 2027/2028 Intakes
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
