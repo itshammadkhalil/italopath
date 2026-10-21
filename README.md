@@ -125,58 +125,35 @@ italopath-app/
 
 ---
 
-## 🚀 3-Day Major Architectural & Design Evolution
+## 📋 Release Notes & Architectural Changelog (v1.1.0 - Production Readiness)
 
-### 1. Brand Identity & Global Domain Migration
-- **Domain Finalization:** All canonical metadata, OpenGraph tags, sitemaps, and robots directives migrated from temporary aliases to **`https://italopath.tech`**.
-- **Contact Channel Consolidation:** Every email link updated to **`info@italopath.tech`**.
-- **Office Location De-cluttering:** Removed physical office text (*"Islamabad, Pakistan"*) from footer and contact pages to emphasize remote-first concierge consultancy across all Pakistani provinces.
-- **Dynamic Next.js Icons:** Implemented `src/app/icon.tsx` (32x32 Favicon) and `src/app/apple-icon.tsx` (180x180 Apple Touch Icon) using Next.js `ImageResponse` with SVG-rendered emerald branding.
-- **Intake Horizon Transition:** Updated all intake mentions across hero badges, forms, and metadata from 2026 to **`2027/2028`** (*Primary: Fall 2027 Intake • Secondary: 2028 Planning*). Past cases preserved as *"2025/2026 Placed"*.
+- **Platform Core & Domain:**
+  - Migrated canonical domain, OpenGraph metadata, sitemaps, and robots directives to **`https://italopath.tech`**.
+  - Unified all inquiry and support communication under **`info@italopath.tech`**.
+  - Streamlined branding by removing physical office references to emphasize a remote-first concierge advisory model across Pakistan.
+  - Implemented dynamic, scalable SVG favicons (`src/app/icon.tsx`) and Apple Touch icons (`src/app/apple-icon.tsx`) utilizing `next/og` `ImageResponse`.
 
-### 2. UI/UX & Layout Overhauls
-- **Homepage Hero Re-architecture:** Converted a centered, low-contrast header into a balanced 2-column layout (7 cols copy / 5 cols visual) with verified statistics (200+ students, €0 net tuition, 99% visa rate).
-- **"Why Study in Italy?" Polish:** Removed muddy card text overlays in favor of high-contrast cards, updating legal travel accuracy to **29 Schengen countries**.
-- **Process Tabbed Roadmap (`/process`):** Replaced an unwieldy vertical accordion with an interactive client-side 2-column roadmap dashboard (`activePhase` state selector, horizontal scroll on mobile, key deliverables checklist).
-- **Scholarships Header (`/scholarships`):** Integrated a right-side *"Regional Benefit Estimate"* card outlining up to €8,500/year in stipends, free canteen meals, and 100% tuition waivers.
-- **Comparison Table (`/about`):** Replaced an isolated dark card with a crisp, modern light-mode comparative table contrasting traditional agent practices against ItaloPath's transparent advisory model.
-- **Assessment Form Simplification (`/contact`):** Removed confusing multi-step pills in favor of a clean 2-section layout with inner left Lucide icons (`User`, `Phone`, `Mail`, `MapPin`, `GraduationCap`, `Award`, `Languages`, `Calendar`, `FileText`).
-- **Concierge Sidebar (`/contact`):** Designed an elevated 2-card sidebar featuring an active response card and a dark stepper timeline explaining what happens after submission.
+- **Intake Horizon:**
+  - Transitioned all active recruitment and counseling cycles globally to **`2027/2028`** (*Primary: Fall 2027 Intake • Secondary: 2028 Planning*).
+  - Preserved verified historical placement data as *"2025/2026 Placed"*.
 
-### 3. Formspree Integration & Honeypot Bot Security
-- **Serverless Form Handling:** Form submission wired directly to Formspree endpoint (`https://formspree.io/f/mgaojybz`) via AJAX `fetch`.
-- **Form State Management:** Implemented clean loading states (`isSubmitting` with spinner) and success card confirmations with reset capability.
-- **Honeypot Anti-Spam Trap (`_gotcha`):** Added a hidden input field (`tabIndex={-1}`, `opacity-0`, `pointer-events-none`) with client-side detection that silently neutralizes spam bots without consuming Formspree quota.
+- **UI/UX Enhancements:**
+  - **Split-Hero Architecture:** Shifted to a high-converting 2-column split hero with live trust indicators, verified statistics, and quick-action assessment triggers.
+  - **Schengen Mobility Clarification:** Updated European travel mobility benchmarks to reflect all **29 Schengen countries**.
+  - **Interactive Process Dashboard (`/process`):** Replaced vertical accordions with a 2-column tabbed roadmap featuring phase status pills, timelines, and deliverables checklists.
+  - **Compact DSU Estimator (`/scholarships`):** Integrated regional benefit calculator detailing up to €8,500/year stipends, free canteen cards, and complete tuition exemptions.
+  - **High-Trust Comparison Tables (`/about`):** Added a clear side-by-side comparison illustrating ItaloPath's ethical, direct-application model versus traditional agent practices.
+  - **Concierge Sidebar & Form Flow (`/contact`):** Streamlined the student assessment form with embedded Lucide iconography, paired with a dark-mode status sidebar detailing post-submission review workflows.
 
-### 4. Vulnerability Mitigation & Dependency Hardening
-- **Next.js Engine Upgrade:** Updated `next` from `16.3.4` to **`16.3.8`**, patching critical CVEs:
-  - **CVE-2026-94544 / GHSA-vcvr-r3jv-pc5j:** Remote Code Execution vulnerability in `next/og` ImageResponse.
-  - **GHSA-3w37-wq28-93x7 & GHSA-mcj8-r9mp-w47p:** Cache poisoning and draft mode content leakage in SSG/ISR.
-  - **GHSA-cjq9-62q9-8jv4:** Server-Side Request Forgery in image optimization.
-- **npm Dependency Overrides:** Enforced resolution overrides in `package.json` to eliminate transitive high-severity vulnerabilities:
-  ```json
-  "overrides": {
-    "sharp": "^0.35.5",
-    "source-map-js": "^1.2.2",
-    "brace-expansion": "^2.0.1"
-  }
-  ```
-  Result: **0 vulnerabilities** across all security audits.
+- **Security & Compliance:**
+  - **Honeypot Anti-Bot Filter:** Integrated client-side honeypot trap (`_gotcha`) to neutralize automated spam submissions before contacting Formspree endpoints.
+  - **Next.js Engine Upgrade:** Updated core framework to **`16.3.8`**, resolving upstream CVEs (CVE-2026-94544, GHSA-3w37-wq28-93x7, GHSA-mcj8-r9mp-w47p, GHSA-cjq9-62q9-8jv4).
+  - **Dependency Vulnerability Overrides:** Enforced strict npm overrides in `package.json` for `sharp`, `source-map-js`, and `brace-expansion`, achieving **0 vulnerabilities** across all security audits.
 
-### 5. Production Build & Hostinger Deployment Hardening
-- **Linux Webpack Fallback:** Turbopack occasionally crashes when invoking `@tailwindcss/postcss` in restricted headless Linux build workers. Solved by explicitly specifying standard stable Webpack in build scripts:
-  ```json
-  "build": "next build --webpack"
-  ```
-- **Dynamic Port Binding (Hostinger 504 Fix):** Hostinger Cloud/VPS reverse proxies route traffic through dynamic `$PORT` environment variables. Next.js defaults to `3000`, causing Nginx gateway timeouts. Fixed by binding to `0.0.0.0` and fallback port expansion:
-  ```json
-  "start": "next start -H 0.0.0.0 -p ${PORT:-3000}"
-  ```
-- **HTTP Security Headers:** Configured enterprise security headers in `next.config.ts`:
-  - `X-Frame-Options: DENY` (Anti-clickjacking)
-  - `X-Content-Type-Options: nosniff` (MIME sniffing prevention)
-  - `Referrer-Policy: strict-origin-when-cross-origin`
-  - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
+- **Production Deployment:**
+  - **Webpack Build Engine Configuration:** Switched production build target to `next build --webpack` for reliable compilation on headless Linux container environments.
+  - **Dynamic Container Port Binding:** Enhanced runtime startup script to bind to `0.0.0.0` and dynamically honor the platform-assigned `$PORT` variable (`next start -H 0.0.0.0 -p ${PORT:-3000}`), preventing reverse proxy 504 Gateway Timeouts.
+  - **HTTP Security Headers:** Configured strict headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) in `next.config.ts`.
 
 ---
 
