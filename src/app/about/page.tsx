@@ -191,39 +191,52 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-[1fr_1fr] md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 pb-4 border-b border-slate-200/80 items-center">
-            <div className="hidden md:block text-xs font-bold text-slate-400 uppercase tracking-wider">CRITERIA</div>
-            <div className="text-center text-xs font-bold text-rose-500 uppercase tracking-wider">TRADITIONAL AGENTS</div>
-            <div className="text-center text-xs font-bold text-emerald-600 uppercase tracking-wider">ITALOPATH</div>
-          </div>
-
-          <div className="divide-y divide-slate-100">
-            {[
-              { label: "Visa Outcome", bad: "Fake 100% Guarantees", good: "Honest File Prep Only" },
-              { label: "University Selection", bad: "Partner Unis Only (Commission based)", good: "Top Public Universities (Merit based)" },
-              { label: "Pricing Structure", bad: "Hidden Fees & Cuts", good: "Flat Transparent Fee" },
-              { label: "Account Control", bad: "Agents keep your passwords", good: "You own your portals" },
-              { label: "Scholarship Support", bad: "Ignored or charged extra", good: "Core DSU processing included" },
-            ].map((row, idx) => (
-              <div 
-                key={idx} 
-                className="grid grid-cols-[1fr_1fr] md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 py-4 items-center hover:bg-slate-50/50 transition-colors"
-              >
-                <div className="hidden md:block font-bold text-sm text-slate-800">{row.label}</div>
-                <div className="flex justify-center">
-                  <span className="text-rose-600 bg-rose-50/70 border border-rose-200/60 rounded-xl px-3 py-2 text-xs font-medium inline-flex items-center gap-1.5 text-center">
-                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                    <span>{row.bad}</span>
-                  </span>
-                </div>
-                <div className="flex justify-center">
-                  <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3.5 py-2 text-xs font-semibold inline-flex items-center gap-1.5 text-center shadow-xs">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>{row.good}</span>
-                  </span>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200/80">
+                  <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    CRITERIA
+                  </th>
+                  <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-rose-500 text-center">
+                    TRADITIONAL AGENTS
+                  </th>
+                  <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-emerald-600 text-center">
+                    ITALOPATH
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Visa Outcome", bad: "Fake 100% Guarantees", good: "Honest File Prep Only" },
+                  { label: "University Selection", bad: "Partner Unis Only (Commission based)", good: "Top Public Universities (Merit based)" },
+                  { label: "Pricing Structure", bad: "Hidden Fees & Cuts", good: "Flat Transparent Fee" },
+                  { label: "Account Control", bad: "Agents keep your passwords", good: "You own your portals" },
+                  { label: "Scholarship Support", bad: "Ignored or charged extra", good: "Core DSU processing included" },
+                ].map((row, idx) => (
+                  <tr 
+                    key={idx} 
+                    className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors"
+                  >
+                    <td className="py-4 px-4 font-bold text-sm text-slate-800 whitespace-nowrap">
+                      {row.label}
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <span className="inline-flex w-full max-w-[280px] items-center justify-start gap-2 px-3.5 py-2.5 rounded-xl text-rose-600 bg-rose-50/70 border border-rose-200/60 text-xs font-medium">
+                        <XCircle className="w-4 h-4 text-rose-500 shrink-0" />
+                        <span>{row.bad}</span>
+                      </span>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <span className="inline-flex w-full max-w-[280px] items-center justify-start gap-2 px-3.5 py-2.5 rounded-xl text-emerald-700 bg-emerald-50 border border-emerald-200 text-xs font-semibold shadow-xs">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                        <span>{row.good}</span>
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
