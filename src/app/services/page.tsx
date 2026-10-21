@@ -247,103 +247,161 @@ export default function ServicesPage() {
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">Flat fees. No hidden percentages. Choose the level of support you need.</p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             
-            {/* Tier 1 */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:bg-slate-800/80 transition-colors">
-              <h3 className="text-xl font-bold text-white mb-2">Admissions Only</h3>
-              <p className="text-sm text-slate-400 mb-8 h-10">For students who just need university admission and initial DOV/CIMEA guidance.</p>
-              
-              <ul className="space-y-4 mb-8 flex-1">
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> University shortlisting (up to 3)
-                </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Application filing & tracking
-                </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Initial CIMEA/DOV guidance
-                </li>
-              </ul>
-              
-              <div className="mb-6 inline-flex items-center justify-center w-full px-4 py-2 bg-slate-900/80 text-slate-300 text-xs font-medium rounded-lg border border-slate-700">
-                Milestone: 50% upfront, 50% on offer letter
+            {/* Tier 1: Admissions Only */}
+            <div className="bg-slate-800/50 border border-slate-700/80 rounded-3xl p-8 flex flex-col justify-between h-full hover:bg-slate-800/80 transition-all">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Admissions Only</h3>
+                <p className="text-sm text-slate-400 mb-6 min-h-[40px]">
+                  For students who just need university admission and initial DOV/CIMEA guidance.
+                </p>
+
+                {/* Tier Clarity Indicator */}
+                <div className="mb-6 pb-5 border-b border-slate-700/60">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    Advisory Tier
+                  </span>
+                  <p className="text-xl font-extrabold text-white">Flat Advisory Fee</p>
+                </div>
+                
+                <ul className="space-y-3.5 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>University shortlisting (up to 3)</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Application filing &amp; tracking</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Initial CIMEA/DOV guidance</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Eligibility audit &amp; checklist</span>
+                  </li>
+                </ul>
               </div>
               
-              <Link 
-                href="/contact?plan=admissions" 
-                className="block w-full text-center py-3 px-6 rounded-xl font-semibold bg-white text-slate-900 hover:bg-slate-200 transition-colors"
-              >
-                Select This Plan
-              </Link>
+              <div className="pt-6 border-t border-slate-700/60 flex flex-col gap-3">
+                <div className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-slate-900/80 text-slate-300 text-xs font-medium rounded-xl border border-slate-700 text-center min-h-[42px]">
+                  Milestone: 50% upfront, 50% on offer letter
+                </div>
+                <Link 
+                  href="/contact?plan=admissions" 
+                  className="block w-full text-center bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-700 font-semibold py-3 px-6 rounded-xl transition-all"
+                >
+                  Select This Plan
+                </Link>
+              </div>
             </div>
 
-            {/* Tier 2 (Most Popular) */}
-            <div className="bg-slate-800 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col h-full relative transform lg:-translate-y-4 shadow-2xl shadow-emerald-900/20">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+            {/* Tier 2: Full End-to-End Package (Most Popular) */}
+            <div className="bg-slate-800 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col justify-between h-full relative shadow-2xl shadow-emerald-950/40">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-slate-950 px-4 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest shadow-md">
                 Most Popular
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-2 mt-2">Full End-to-End Package</h3>
-              <p className="text-sm text-emerald-100/70 mb-8 h-10">From profile assessment to boarding your flight to Italy. We handle it all.</p>
-              
-              <ul className="space-y-4 mb-8 flex-1">
-                <li className="flex items-start gap-3 text-sm text-white">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Admissions & Shortlisting
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> CIMEA & Document Legalisation
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Universitaly Portal Processing
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> DSU Scholarship Prep (ISEE)
-                </li>
-                <li className="flex items-start gap-3 text-sm text-white">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> VFS Visa Dossier & Mock Interview
-                </li>
-              </ul>
-              
-              <div className="mb-6 inline-flex items-center justify-center w-full px-4 py-2 bg-slate-900/80 text-emerald-300 text-xs font-medium rounded-lg border border-emerald-500/30">
-                Milestone: 50% upfront, 50% on pre-enrolment
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 mt-1">Full End-to-End Package</h3>
+                <p className="text-sm text-emerald-100/70 mb-6 min-h-[40px]">
+                  From profile assessment to boarding your flight to Italy. We handle it all.
+                </p>
+
+                {/* Tier Clarity Indicator */}
+                <div className="mb-6 pb-5 border-b border-emerald-500/20">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+                    Advisory Tier
+                  </span>
+                  <p className="text-xl font-extrabold text-emerald-400">Comprehensive Package</p>
+                </div>
+                
+                <ul className="space-y-3.5 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-sm text-white">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Admissions &amp; University Shortlisting</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-white">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>CIMEA &amp; Document Legalisation Support</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-white">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Universitaly Portal Pre-Enrolment</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-white">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>DSU Scholarship Prep (ISEE Parificato)</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-white">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>VFS Visa Dossier &amp; Mock Interview</span>
+                  </li>
+                </ul>
               </div>
               
-              <Link 
-                href="/contact?plan=full" 
-                className="block w-full text-center py-4 px-6 rounded-xl font-bold bg-emerald-500 text-white hover:bg-emerald-600 transition-all hover:shadow-lg hover:-translate-y-0.5"
-              >
-                Select This Plan
-              </Link>
+              <div className="pt-6 border-t border-emerald-500/20 flex flex-col gap-3">
+                <div className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-slate-900/80 text-emerald-300 text-xs font-medium rounded-xl border border-emerald-500/30 text-center min-h-[42px]">
+                  Milestone: 50% upfront, 50% on pre-enrolment
+                </div>
+                <Link 
+                  href="/contact?plan=full" 
+                  className="block w-full text-center bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 px-6 rounded-xl transition-all shadow-md shadow-emerald-500/20"
+                >
+                  Select This Plan
+                </Link>
+              </div>
             </div>
 
-            {/* Tier 3 */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 flex flex-col h-full hover:bg-slate-800/80 transition-colors">
-              <h3 className="text-xl font-bold text-white mb-2">Scholarship & Visa Only</h3>
-              <p className="text-sm text-slate-400 mb-8 h-10">For students who already secured university admission and only need final step execution.</p>
-              
-              <ul className="space-y-4 mb-8 flex-1">
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Full DSU Scholarship handling
-                </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Universitaly pre-enrolment review
-                </li>
-                <li className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> VFS Visa Dossier assembly
-                </li>
-              </ul>
-              
-              <div className="mb-6 inline-flex items-center justify-center w-full px-4 py-2 bg-slate-900/80 text-slate-300 text-xs font-medium rounded-lg border border-slate-700">
-                Milestone: 50% upfront, 50% on visa file completion
+            {/* Tier 3: Scholarship & Visa Only */}
+            <div className="bg-slate-800/50 border border-slate-700/80 rounded-3xl p-8 flex flex-col justify-between h-full hover:bg-slate-800/80 transition-all">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Scholarship &amp; Visa Only</h3>
+                <p className="text-sm text-slate-400 mb-6 min-h-[40px]">
+                  For students who already secured university admission and only need final step execution.
+                </p>
+
+                {/* Tier Clarity Indicator */}
+                <div className="mb-6 pb-5 border-b border-slate-700/60">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    Advisory Tier
+                  </span>
+                  <p className="text-xl font-extrabold text-white">Specialized Dossier Fee</p>
+                </div>
+                
+                <ul className="space-y-3.5 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Full DSU Scholarship Handling &amp; CAF Prep</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Universitaly Pre-Enrolment Audit</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>VFS Study Visa Dossier Compilation</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Consular Mock Interview Coaching</span>
+                  </li>
+                </ul>
               </div>
               
-              <Link 
-                href="/contact?plan=visa" 
-                className="block w-full text-center py-3 px-6 rounded-xl font-semibold bg-white text-slate-900 hover:bg-slate-200 transition-colors"
-              >
-                Select This Plan
-              </Link>
+              <div className="pt-6 border-t border-slate-700/60 flex flex-col gap-3">
+                <div className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-slate-900/80 text-slate-300 text-xs font-medium rounded-xl border border-slate-700 text-center min-h-[42px]">
+                  Milestone: 50% upfront, 50% on visa file completion
+                </div>
+                <Link 
+                  href="/contact?plan=visa" 
+                  className="block w-full text-center bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-700 font-semibold py-3 px-6 rounded-xl transition-all"
+                >
+                  Select This Plan
+                </Link>
+              </div>
             </div>
 
           </div>
