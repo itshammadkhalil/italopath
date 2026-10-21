@@ -8,7 +8,6 @@ import {
   ShieldAlert, 
   CheckCircle2, 
   XCircle,
-  Building2,
   GraduationCap
 } from 'lucide-react';
 
@@ -230,50 +229,65 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════════════
-          4. FOUNDER / OPERATIONAL ETHICS
+          4. FOUNDER / OPERATIONAL ETHICS (Manifesto)
       ════════════════════════════════════════════ */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Founder Card */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-10 shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-10 -mt-10 z-0"></div>
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <div className="bg-white border border-slate-200/80 rounded-3xl p-8 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Column (5 Cols - Structured Credibility Card) */}
+          <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+            {/* Top accent: Soft emerald glow in corner */}
+            <div className="absolute -right-16 -top-16 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
+
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-8">
-                <Building2 className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight">Our Operational Standard</h3>
+              <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-3 py-1 rounded-full font-medium inline-block mb-4">
+                🇮🇹 Ground Truth
+              </span>
+              <h3 className="text-xl font-bold text-white mb-6">Our Operational Standard</h3>
+              
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-slate-700 font-medium leading-relaxed">Direct Italian Academic Experience</span>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-slate-300 leading-relaxed">
+                    <strong className="text-white font-semibold">Direct Italian University Liaison:</strong> Zero middlemen or local subcontracted agents.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-slate-700 font-medium leading-relaxed">No Middlemen or Sub-agents</span>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-slate-300 leading-relaxed">
+                    <strong className="text-white font-semibold">Student Portal Ownership:</strong> You hold all passwords to Universitaly and regional portals.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-slate-700 font-medium leading-relaxed">Ground-Level Universitaly Guidance</span>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-slate-300 leading-relaxed">
+                    <strong className="text-white font-semibold">Strict Documentation Ethics:</strong> Flawless legalisation without forged or inflated credentials.
+                  </span>
                 </li>
               </ul>
+
+              <span className="text-xs text-slate-400 border-t border-slate-800 pt-4 mt-6 block">
+                Built on absolute student advocacy.
+              </span>
             </div>
           </div>
 
-          {/* Right: Manifesto */}
-          <div className="lg:pl-8">
-            <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">Our Manifesto</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">Why Italy?</h3>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+          {/* Right Column (7 Cols - High-Impact Manifesto) */}
+          <div className="lg:col-span-7">
+            <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-2">
+              OUR MANIFESTO
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Why Italy?
+            </h2>
+            <div className="space-y-4 text-base text-slate-600 leading-relaxed">
               <p>
-                Because higher education should be accessible based on your intellect and hard work, not the size of your bank balance.
+                Higher education should be accessible based on your intellect and hard work, not the size of your bank balance.
               </p>
               <p>
-                Italy’s DSU scholarship framework is one of the most generous in the world, yet thousands of students miss out due to bureaucratic errors, missed deadlines, or poor guidance from uneducated agents.
+                Italy’s DSU scholarship framework is one of the most generous in the world, yet thousands of students miss out each intake due to bureaucratic errors, missed deadlines, or poor guidance from uneducated agents.
               </p>
-              <div className="pl-6 border-l-4 border-emerald-500 pt-1 pb-1">
-                <p className="font-semibold text-slate-800">
-                  "We handle your applications with the exact same precision and urgency we would use for our own."
-                </p>
+              <div className="bg-slate-50 border-l-4 border-emerald-500 p-5 rounded-r-xl my-6 text-slate-900 font-medium text-base italic leading-relaxed">
+                &ldquo;We handle your applications with the exact same precision and urgency we would use for our own.&rdquo;
               </div>
             </div>
           </div>
