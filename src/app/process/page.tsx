@@ -10,6 +10,7 @@ import {
   FileCheck,
   Globe,
   ArrowRight,
+  MessageSquare,
 } from 'lucide-react';
 
 interface PhaseItem {
@@ -555,49 +556,64 @@ export default function ProcessPage() {
             </div>
           </div>
 
-          {/* 2.3 BOTTOM FLOATING BANNER */}
-          <div className="mt-8 bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700/80 rounded-2xl p-6 sm:p-7 shadow-xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-center sm:text-left">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">
-                ⚡ Take The First Step Today
-              </span>
-              <h3 className="text-lg sm:text-xl font-bold text-white">
-                Ready to initiate Phase {phases[activePhase].num} for your profile?
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mt-0.5">
-                Book your comprehensive 2027/2028 admission &amp; DSU scholarship evaluation.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl transition-all shadow-md shadow-emerald-500/20"
-            >
-              Initiate Phase {phases[activePhase].num} Evaluation
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+          {/* ════════════════════════════════════════════
+              3. CLOSING ACTION BANNER
+          ════════════════════════════════════════════ */}
+          <div className="mt-12 mb-4 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden text-white">
+            {/* Top-right subtle visual accent */}
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* ════════════════════════════════════════════
-          3. BOTTOM CTA
-      ════════════════════════════════════════════ */}
-      <section className="py-16 bg-slate-100/60 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bg-white border border-slate-200 shadow-xl shadow-slate-200/50 rounded-3xl p-10 md:p-14">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">
-              Unsure where your profile fits?
-            </h2>
-            <p className="text-base sm:text-lg text-slate-500 mb-8 max-w-xl mx-auto">
-              Get an expert evaluation for the current active intakes. We&apos;ll map out your exact timeline and university options.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/20 text-base sm:text-lg"
-            >
-              Get Evaluated for 2027/2028 Intakes
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            {/* Split Layout */}
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Side (7 Cols) */}
+              <div className="lg:col-span-7">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                  ⚡ Next Operational Step
+                </span>
+                <h3 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight mt-3">
+                  Unsure Which Phase Fits Your Profile?
+                </h3>
+                <p className="text-sm lg:text-base text-slate-300 mt-2 max-w-xl leading-relaxed">
+                  Whether you need early course mapping or already have an admission offer and need DSU legalisation, our specialists map out your exact timeline within 24 hours.
+                </p>
+                <div className="text-xs text-slate-400 flex flex-wrap gap-4 mt-4">
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-emerald-400 font-bold">✓</span>
+                    No Guesswork
+                  </span>
+                  <span className="text-slate-700">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-emerald-400 font-bold">✓</span>
+                    Strict 2027/2028 Intake Alignment
+                  </span>
+                  <span className="text-slate-700">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-emerald-400 font-bold">✓</span>
+                    Free Initial Audit
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Side (5 Cols - Dual CTAs) */}
+              <div className="lg:col-span-5 flex flex-col justify-center">
+                <Link
+                  href="/contact"
+                  className="w-full py-3.5 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-center shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Get Evaluated for 2027/2028</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="https://wa.me/923001234567"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-6 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-medium rounded-xl text-center text-sm transition-all flex items-center justify-center gap-2 mt-3"
+                >
+                  <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <span>Chat Directly on WhatsApp</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
