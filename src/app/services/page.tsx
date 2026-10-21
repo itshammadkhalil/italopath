@@ -405,42 +405,52 @@ export default function ServicesPage() {
             </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* ════════════════════════════════════════════
-          4. TRUST REASSURANCE BANNER
-      ════════════════════════════════════════════ */}
-      <section className="bg-slate-100 py-8 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
-            <ShieldCheck className="w-10 h-10 text-emerald-600 shrink-0" />
-            <div>
-              <h4 className="text-lg font-bold text-slate-900">Zero Success Fees. Zero Hidden Percentages.</h4>
-              <p className="text-slate-600 text-sm">Unlike other agents, we do not take a cut of your DSU scholarship stipend. 100% of your scholarship belongs to you.</p>
-            </div>
+          {/* Trust Reassurance Pill */}
+          <div className="mt-12 max-w-4xl mx-auto py-3 px-6 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-300 flex items-center justify-center gap-3 text-xs sm:text-sm text-center">
+            <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+            <span>
+              <strong className="text-white font-semibold">Zero Success Fees. Zero Hidden Percentages.</strong> We do not take a cut of your DSU stipend — <span className="text-white font-semibold">100% of your scholarship belongs to you</span>.
+            </span>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════
-          5. BOTTOM CTA
+          4. BOTTOM WHATSAPP CTA CARD
       ════════════════════════════════════════════ */}
-      <section className="py-24 px-6">
-        <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-3xl p-10 md:p-14 text-center shadow-lg">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Need custom advice before committing?</h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-xl mx-auto leading-relaxed">
-            Message us directly on WhatsApp for a quick, no-obligation profile evaluation.
-          </p>
-          <a 
-            href="https://wa.me/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-[#25D366] rounded-full hover:bg-[#20bd5a] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 gap-2"
-          >
-            <MessageCircle className="w-6 h-6" />
-            Chat on WhatsApp
-          </a>
+      <section className="py-6 px-6 bg-slate-50/50">
+        <div className="max-w-4xl mx-auto my-12 p-8 rounded-3xl bg-slate-900 border border-slate-800 text-white text-center shadow-xl relative overflow-hidden">
+          {/* Subtle emerald glow */}
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold tracking-tight text-white">
+              Need Custom Advice Before Deciding?
+            </h2>
+            <p className="text-sm text-slate-300 max-w-lg mx-auto mt-2 mb-6 leading-relaxed">
+              Not sure which tier matches your current document status? Chat directly with a senior counselor for clear, honest guidance.
+            </p>
+            <a
+              href="https://wa.me/923001234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all shadow-lg shadow-emerald-600/20"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>Chat Directly on WhatsApp</span>
+            </a>
+            <p className="text-xs text-slate-400 mt-4 block">
+              Prefer email? Reach us at{" "}
+              <a
+                href="mailto:info@italopath.tech"
+                className="text-slate-300 hover:text-emerald-400 underline underline-offset-2 transition-colors"
+              >
+                info@italopath.tech
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
