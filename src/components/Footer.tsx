@@ -190,8 +190,16 @@ export default function Footer() {
             <p className="text-xs text-slate-500">
               © {new Date().getFullYear()} ItaloPath. All rights reserved.
             </p>
-            <p className="text-xs text-slate-500">
-              Crafted with transparency & trust.
+            <p className="text-xs text-slate-400">
+              Made by{" "}
+              <a
+                href="https://novastackltd.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 hover:text-emerald-300 font-semibold underline underline-offset-4 transition-colors"
+              >
+                NovaStack
+              </a>
             </p>
           </div>
         </div>
