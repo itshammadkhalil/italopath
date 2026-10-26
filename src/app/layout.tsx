@@ -51,6 +51,24 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "ItaloPath",
+  url: "https://italopath.tech",
+  logo: "https://italopath.tech/icon",
+  description:
+    "Specialized study visa & DSU regional scholarships advisory for Italian public universities.",
+  email: "info@italopath.tech",
+  sameAs: ["https://www.instagram.com/italopath"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "admissions",
+    email: "info@italopath.tech",
+    availableLanguage: ["English", "Urdu"],
+  },
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -58,6 +76,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1 pt-16 lg:pt-18">{children}</main>
