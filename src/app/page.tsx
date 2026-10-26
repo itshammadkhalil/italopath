@@ -118,7 +118,7 @@ export default function Home() {
               {/* Main image frame */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 border border-slate-700/40 aspect-[4/5] max-h-[520px]">
                 <Image
-                  src="/images/university-courtyard.png"
+                  src="/images/university-courtyard.webp"
                   alt="Historic Italian university courtyard with Renaissance arches"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -202,7 +202,7 @@ export default function Home() {
             {/* Tuition Card */}
             <div className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300">
               <div className="relative h-44 w-full shrink-0 overflow-hidden rounded-t-2xl">
-                <Image src="/images/lecture-hall.png" alt="Italian lecture hall" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/lecture-hall.webp" alt="Italian lecture hall" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
@@ -220,7 +220,7 @@ export default function Home() {
             {/* DSU Card */}
             <div className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300">
               <div className="relative h-44 w-full shrink-0 overflow-hidden rounded-t-2xl">
-                <Image src="/images/scholarship-euros.png" alt="Italian scholarship documents" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/scholarship-euros.webp" alt="Italian scholarship documents" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
@@ -238,7 +238,7 @@ export default function Home() {
             {/* Schengen Card */}
             <div className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300">
               <div className="relative h-44 w-full shrink-0 overflow-hidden rounded-t-2xl">
-                <Image src="/images/italian-cityscape.png" alt="Florence skyline" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/italian-cityscape.webp" alt="Florence skyline" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
@@ -256,7 +256,7 @@ export default function Home() {
             {/* Work Rights Card */}
             <div className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 hover:border-emerald-500/40 hover:shadow-lg transition-all duration-300">
               <div className="relative h-44 w-full shrink-0 overflow-hidden rounded-t-2xl">
-                <Image src="/images/students-collaborating.png" alt="Students collaborating" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/students-collaborating.webp" alt="Students collaborating" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
@@ -284,7 +284,7 @@ export default function Home() {
             {/* Image side */}
             <div className="relative group">
               <div className="relative h-[400px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10">
-                <Image src="/images/students-collaborating.png" alt="Diverse international students studying together in an Italian piazza" fill sizes="100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/students-collaborating.webp" alt="Diverse international students studying together in an Italian piazza" fill sizes="100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               {/* Floating stats card */}
               <div className="absolute -bottom-6 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 animate-fade-in-up">
@@ -340,7 +340,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════ */}
       <section className="relative py-24 overflow-hidden">
         {/* Background courtyard image */}
-        <Image src="/images/university-courtyard.png" alt="Italian university courtyard" fill sizes="100vw" className="object-cover" />
+        <Image src="/images/university-courtyard.webp" alt="Italian university courtyard" fill sizes="100vw" className="object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-[#0F172A]/92"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -429,7 +429,7 @@ export default function Home() {
             {/* Image side */}
             <div className="relative group order-first lg:order-last">
               <div className="relative h-[400px] md:h-[520px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10">
-                <Image src="/images/happy-graduates.png" alt="International students celebrating graduation at an Italian university" fill sizes="100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/happy-graduates.webp" alt="International students celebrating graduation at an Italian university" fill sizes="100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               </div>
               {/* Floating card */}
               <div className="absolute -bottom-6 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 animate-fade-in-up">
@@ -467,7 +467,7 @@ export default function Home() {
             {/* Card 1 */}
             <div className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col h-full">
               <div className="relative w-full aspect-[16/10] overflow-hidden shrink-0">
-                <Image src="/images/scholarship-euros.png" alt="Italian visa and university documents" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src="/images/scholarship-euros.webp" alt="Italian visa and university documents" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
@@ -484,7 +484,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col h-full">
               <div className="relative w-full aspect-[16/10] overflow-hidden shrink-0">
-                <Image src="/images/university-courtyard.png" alt="Historic Italian university courtyard" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src="/images/university-courtyard.webp" alt="Historic Italian university courtyard" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
@@ -501,7 +501,7 @@ export default function Home() {
             {/* Card 3 */}
             <div className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col h-full">
               <div className="relative w-full aspect-[16/10] overflow-hidden shrink-0">
-                <Image src="/images/lecture-hall.png" alt="Students in Italian lecture hall" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src="/images/lecture-hall.webp" alt="Students in Italian lecture hall" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="p-6 flex flex-col justify-between flex-1">
                 <div>
@@ -688,7 +688,7 @@ export default function Home() {
           LEAD CAPTURE CTA — With Florence background
       ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 overflow-hidden">
-        <Image src="/images/italian-cityscape.png" alt="Florence sunset panorama" fill sizes="100vw" className="object-cover" />
+        <Image src="/images/italian-cityscape.webp" alt="Florence sunset panorama" fill sizes="100vw" className="object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/95 via-[#0F172A]/85 to-[#10A985]/40"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

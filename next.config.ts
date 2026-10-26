@@ -26,6 +26,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactCompiler: false,
   devIndicators: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   async headers() {
     return [
       {

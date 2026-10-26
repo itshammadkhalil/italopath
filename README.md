@@ -49,14 +49,14 @@ Target Cycles: **2027/2028 Academic Year** (Primary: Fall 2027 Intake • Second
 italopath-app/
 ├── public/
 │   ├── favicon.ico                  # Fallback legacy browser favicon
-│   └── images/                      # AI-curated WebP-optimized photography
-│       ├── hero-university.png      # Historic Italian university courtyard
-│       ├── students-collaborating.png # Peer study collaboration
-│       ├── italian-cityscape.png    # Italian metropolitan architecture
-│       ├── lecture-hall.png         # Modern university auditorium
-│       ├── scholarship-euros.png    # DSU financial support imagery
-│       ├── happy-graduates.png      # Successful graduation ceremony
-│       └── university-courtyard.png # Campus architectural view
+│   └── images/                      # High-performance WebP-optimized photography (<300KB)
+│       ├── hero-university.webp      # Historic Italian university courtyard
+│       ├── students-collaborating.webp # Peer study collaboration
+│       ├── italian-cityscape.webp    # Italian metropolitan architecture
+│       ├── lecture-hall.webp         # Modern university auditorium
+│       ├── scholarship-euros.webp    # DSU financial support imagery
+│       ├── happy-graduates.webp      # Successful graduation ceremony
+│       └── university-courtyard.webp # Campus architectural view
 │
 ├── src/
 │   ├── app/                         # Next.js App Router (13+ Routes)
